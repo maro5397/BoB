@@ -3,15 +3,9 @@
 #include <netinet/in.h>
 #include <stdlib.h>
 
-int main(int argc, char* argv[])
+void func(int argc, char* argv[], uint32_t t[])
 {
-    if(argc > 3)
-    {
-        fprintf(stderr, "Too many arg");
-        exit(-1);
-    }
     FILE * f1;
-    uint32_t t[2] = {0x0000};
     for(int i = 0;i<argc-1;i++)
     {
         f1 = fopen(argv[i+1], "rb");
@@ -28,5 +22,16 @@ int main(int argc, char* argv[])
         }
         t[i] = ntohl(t[i]);
     }
+}
+
+int main(int argc, char* argv[])
+{
+    if(argc > 3)
+    {
+        fprintf(stderr, "Too many arg");
+        exit(-1);
+    }
+    uint32_t t[2] = {0x0000};
+    func(argc, argv, t);
     printf("%d(0x%x) + %d(0x%x) = %d(0x%x)", t[0], t[0], t[1], t[1], t[0]+t[1], t[0]+t[1]);
 }
