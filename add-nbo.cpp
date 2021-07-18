@@ -5,22 +5,23 @@
 
 void func(int argc, char* argv[], uint32_t t[])
 {
-    FILE * f1;
+    FILE * f;
     for(int i = 0;i<argc-1;i++)
     {
-        f1 = fopen(argv[i+1], "rb");
-        if(f1 == NULL)
+        f = fopen(argv[i+1], "rb");
+        if(f == NULL)
         {
             fprintf(stderr, "No File");
             exit(-1);
         }
-        size_t size = fread(t+i, 1, sizeof(uint32_t), f1);
+        size_t size = fread(t+i, 1, sizeof(uint32_t), f);
         if(size != sizeof(uint32_t))
         {
             fprintf(stderr, "fread return: %lu\n", size);
             exit(-1);
         }
         t[i] = ntohl(t[i]);
+        fclose(f);
     }
 }
 
