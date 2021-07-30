@@ -15,7 +15,7 @@
 
 #include "getmymac.h"
 
-int getIPAddress(char *ip_addr)
+int getIPAddress(char *ip_addr, char* netname)
 {
 	int sock;
 	struct ifreq ifr;
@@ -27,7 +27,7 @@ int getIPAddress(char *ip_addr)
 		return 0;
 	}
 
-	strcpy(ifr.ifr_name, "eth0");
+	strcpy(ifr.ifr_name, netname);
 	if (ioctl(sock, SIOCGIFADDR, &ifr)< 0)    
 	{
 		fprintf(stderr, "%s", "IOCTL ERROR");
@@ -59,7 +59,7 @@ void convrt_mac(const char *data, char *cvrt_str, int sz)
      strncpy( cvrt_str, buf, sz );
 }
 
-int getMacAddress(char *mac)
+int getMacAddress(char *mac, char* netname)
 {
 	int sock;
 	struct ifreq ifr;
@@ -71,7 +71,7 @@ int getMacAddress(char *mac)
 		fprintf(stderr, "%s", "SOCK ERROR");
 		return 0;
 	}
-	strcpy(ifr.ifr_name, "eth0");
+	strcpy(ifr.ifr_name, netname);
 	if (ioctl(sock, SIOCGIFHWADDR, &ifr)< 0)    
 	{
 		fprintf(stderr, "%s", "IOCTL ERROR");

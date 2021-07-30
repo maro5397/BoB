@@ -127,8 +127,8 @@ int main(int argc, char* argv[]) {
 	char my_mac[18] = {'\0'};
 	char my_ip[16] = {'\0'};
 
-	getMacAddress(my_mac); //get my mac address
-	getIPAddress(my_ip); //get my ip address
+	getMacAddress(my_mac, argv[1]); //get my mac address
+	getIPAddress(my_ip, argv[1]); //get my ip address
 
 	char errbuf[PCAP_ERRBUF_SIZE];
 	pcap_t* outhandle = pcap_open_live(param.dev_, 0, 0, 0, errbuf);
