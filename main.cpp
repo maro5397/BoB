@@ -75,9 +75,9 @@ Mac getotherMac(pcap_t* inhandle, Ip tarip)
 			printf("pcap_next_ex return %d(%s)\n", res, pcap_geterr(inhandle));
 			return 0;
 		}
-        ethtype = (u_int16_t*)(packet+12);
+        	ethtype = (u_int16_t*)(packet+12);
 		arppro = (u_int16_t*)(packet+16);
-        if(ntohs(*ethtype) == 0x0806 && ntohs(*arppro) == 0x0800)
+        	if(ntohs(*ethtype) == 0x0806 && ntohs(*arppro) == 0x0800)
 		{
 			memcpy(&tip_x, packet+28, Ip::SIZE);
 			tip = Ip(ntohl(tip_x));
