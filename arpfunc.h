@@ -93,4 +93,4 @@ void makeArpPacket(EthArpPacket* packet, Mac eth_dmac, Mac eth_smac, Mac arp_tma
 Mac getotherMac(pcap_t* handle, Ip tarip);
 void send_thread(pcap_t* handle, Attackerinfo* attacker, Node* victim, int flow);
 void release_thread(pcap_t* handle, Attackerinfo* attacker, Node* victim, int flow);
-void catch_thread(pcap_t* handle, Attackerinfo* attacker, Node* victim, int flow);
+//void catch_thread(pcap_t* handle, Attackerinfo* attacker, Node* victim, int flow);

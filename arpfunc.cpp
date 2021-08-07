@@ -66,7 +66,7 @@ void send_thread(pcap_t* handle, Attackerinfo* attacker, Node* victim, int flow)
 			    fprintf(stderr, "pcap_sendpacket return %d error=%s\n", res, pcap_geterr(handle));
 		    }
         }
-        sleep(30);
+        sleep(20);
     }
 }
 
@@ -75,7 +75,6 @@ void release_thread(pcap_t* handle, Attackerinfo* attacker, Node* victim, int fl
 	int res;
 	EthIpPacket newpacket;
 	char errbuf[PCAP_ERRBUF_SIZE];
-	Mac d_mac;
     while (true) {
 		struct pcap_pkthdr* header;
 		const u_char* packet;
@@ -85,12 +84,12 @@ void release_thread(pcap_t* handle, Attackerinfo* attacker, Node* victim, int fl
 			printf("pcap_next_ex return %d(%s)\n", res, pcap_geterr(handle));
 			exit(-1);
 		}
-		printf("Release: FIND\n");
 		memcpy(&newpacket, packet, sizeof(EthIpPacket));
 		for(int i =0;i<flow;i++)
 		{
 			if(newpacket.eth_.type() == EthHdr::Ip4 && newpacket.ipv4_.ipdst() == victim[i].target_ip && newpacket.ipv4_.ipsrc() == victim[i].sender_ip)
 			{
+				printf("Release: %x to %x\n", uint32_t(newpacket.ipv4_.ipsrc()), uint32_t(newpacket.ipv4_.ipdst()));
 				printf("Release: send all packet from target and sender\n");
 				int size = sizeof(EthHdr) + newpacket.ipv4_.iplen();
 				u_char* fakepacket = new u_char[sizeof(u_char)*size];
@@ -129,7 +128,6 @@ void catch_thread(pcap_t* handle, Attackerinfo* attacker, Node* victim, int flow
 			printf("pcap_next_ex return %d(%s)\n", res, pcap_geterr(handle));
 			exit(-1);
 		}
-		printf("Catch: FIND\n");
 		memcpy(&newpacket, packet, sizeof(EthArpPacket));
         if(newpacket.eth_.type() == EthHdr::Arp && newpacket.arp_.pro() == EthHdr::Ip4)
 		{
