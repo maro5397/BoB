@@ -44,12 +44,12 @@ int main(int argc, char* argv[]) {
 	}
 	printf("======FIRST ATTACK END======\n");
 
-	thread sendthr(handle, send_thread, &attacker, victim, flow);
-	thread catchthr(catch_thread, &attacker, victim, flow);
-	thread releasethr(release_thread, &attacker, victim, flow);
-	sendthr.join();
-	catchthr.join();
+	thread releasethr(release_thread, handle, &attacker, victim, flow);
+	thread sendthr(send_thread, handle, &attacker, victim, flow);
+	//thread catchthr(catch_thread, handle, &attacker, victim, flow);
 	releasethr.join();
+	sendthr.join();
+	//catchthr.join();
 
 	pcap_close(handle);
 }

