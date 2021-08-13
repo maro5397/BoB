@@ -14,6 +14,7 @@ int main(int argc, char* argv[]) {
 	attacker.mac = my_mac;
 	attacker.ip = getIPAddress(interface);
 
+	//you have to make handle in thread func
 	char errbuf[PCAP_ERRBUF_SIZE];
 	pcap_t* handle = pcap_open_live(interface, BUFSIZ, 1, 1, errbuf);
 	if (handle == NULL) {
