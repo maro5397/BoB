@@ -1,6 +1,12 @@
 #include "getmyaddr.h"
 #include "arpfunc.h"
 
+/*
+1. broadcast
+2. recover
+3. less input argument
+*/
+
 int main(int argc, char* argv[]) {
 	if (argc < 4) {
 		usage();
