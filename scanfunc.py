@@ -2,7 +2,6 @@ import requests
 from socket import *
 from bs4 import BeautifulSoup
 import subfunc as sub
-from pprint import pprint
 import urllib.request
 
 def webscan(urlname):
@@ -43,11 +42,42 @@ def dirscan(urlname):
         if r.status_code == 200:
             print("You can connect at here!:", r.url)
     f.close()
-
-def vulnerscan(urlname):
+    
+'''
+def sqlscan(urlname):
     html = urllib.request.urlopen(urlname)
     #need cheat sheet
     #using with urllib and show pprint
+'''
+
+def sqlscan(urlname):
+    print("==============================")
+    try:
+        webpage = urllib.request.urlopen(urlname)
+        urlsource = urlname.split('/')
+        if(urlsource[-1] == 'admin'):
+            print('admin label vuln')
+        elif(urlsource[-1] == 'login'):
+            print('login label vuln')
+        else:
+            soup = BeautifulSoup(webpage, "html.parser")
+            for formtag in soup.findAll('form'):
+                print('Using '+formtag.get('method')+' Method')
+                if(formtag.get('method').upper() == 'GET'):
+                    print('GET Method Using... How about using POST?')
+                try:
+                    response = requests.get(urlname+"'")
+                    print('status_code:', response)
+                    print('header:', response.headers)
+                    statuscode = [404, 500, 408, 302]
+                    if(response.status_code in statuscode):
+                        print('There will be sql injection vuln...!')
+                except:
+                    print('There will be less probability')
+    except:
+        print('There is no ssl certificate...vuln!')
+    print("==============================")
+
 
 def crawling(urlname, tags):
     if len(tags) <= 0:
