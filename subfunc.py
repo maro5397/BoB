@@ -1,6 +1,5 @@
 import sys
 import re
-import copy
 from time import sleep
 
 class colors:
