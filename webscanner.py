@@ -9,7 +9,9 @@ def main():
     #scan.dirscan(urlname)
     #taglist = sub.maketaglist()
     #scan.crawling(urlname, taglist)
-    scan.sqlscan(urlname)
+    #scan.sqlscan(urlname)
+    scan.XSSscan(urlname)
+
 
 if __name__ == '__main__':
     main()
