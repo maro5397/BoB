@@ -6,6 +6,15 @@ import subfunc as sub
 import urllib.request
 import random
 
+class colors:
+    r = '\033[31m'
+    g = '\033[32m'
+    y = '\033[33m'
+    b = '\033[34m'
+    m = '\033[35m'
+    c = '\033[36m'
+    w = '\033[37m'
+
 def webscan(urlname):
     r = requests.get(urlname)
     print("==============================")
@@ -69,10 +78,12 @@ def XSSscan(urlname):
                                     req = requests.get(attackurl, headers=header)
                                     
                                     if i in req.text:
-                                        print("Parameter vulnerable\r\n")
+                                        print(colors.r, end='')
+                                        print("Parameter vulnerable\r")
                                         print("Vulneranle Payload Find\t: " + req.url)
                                         with open("vulnpayload/"+ 'GET-' +sub.seperatehttp(urlname)+".txt", "a+") as ss:
                                             ss.write(attackurl+"\n")
+                                        print(colors.w, end='')
                                     else:
                                         print("TRYING\t:", req.url)
                                         
@@ -100,10 +111,12 @@ def XSSscan(urlname):
                                     req = requests.post(attackurl, headers=header, data=data)
                                     
                                     if i in req.text:
-                                        print("Parameter vulnerable\r\n")
+                                        print(colors.r, end='')
+                                        print("Parameter vulnerable\r")
                                         print("Vulneranle Payload Find\t: " + req.url)
                                         with open("vulnpayload/"+ 'POST-' +sub.seperatehttp(urlname)+".txt", "a+") as ss:
                                             ss.write(attackurl + "\n" + inputtagname + ":" + i + "\n")
+                                        print(colors.w, end='')
                                     else:
                                         print("TRYING\t:", req.url)
                                         
@@ -140,14 +153,13 @@ def sqlscan(urlname):
     print("==============================")
 
 
-def crawling(urlname, tags):
-    if len(tags) <= 0:
+def crawling(urlname, tag):
+    if len(tag) <= 0:
         print("There is no data in tags list")
         return
     html = requests.get(urlname)
     sp = BeautifulSoup(html.text, "html.parser")
-    for tag in tags:
-        for text in sp.select(tag):
-            print("------------------------------")
-            print(text)
-            print("------------------------------")
+    for text in sp.select(tag):
+        print("------------------------------")
+        print(text)
+        print("------------------------------")
