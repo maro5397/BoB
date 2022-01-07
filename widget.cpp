@@ -85,5 +85,6 @@ void Widget::on_pbReset_clicked()
     QMessageBox::information(nullptr, "Reset", msg);
     money = 0;
     ui->lcdNumber->display(money);
+    setControl();
 }
 
