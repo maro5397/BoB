@@ -42,7 +42,9 @@ int main(int argc, char* argv[]) {
 		return -1;
 	}
 
-    Dot11PacketForm pk;
+    Dot11RadioTapHdr hdr;
+    BeaconPacketForm pk;
+    int len;
 
 	while (true) {
 		struct pcap_pkthdr* header;
@@ -53,31 +55,28 @@ int main(int argc, char* argv[]) {
             std::cout << "pcap_next_ex return " << res << "(" << pcap_geterr(pcap) << ")" << std::endl;
 			break;
 		}
-        memcpy(&pk, packet, DOT11BEFORETP_LEN);
-        pk.taggedp_ = packet+DOT11BEFORETP_LEN;
-        //dumpPacket(packet, DOT11BEFORETP_LEN);
+        memcpy(&hdr, packet, RADIOTAPHDR_LEN);
+        memcpy(&pk, packet+hdr.len_, DOT11BEACONFRAME_LEN + DOT11WIRELESSMANFIXED_LEN);
+        pk.taggedp_.setting(packet + hdr.len_ + DOT11BEACONFRAME_LEN + DOT11WIRELESSMANFIXED_LEN, header->caplen);
+        //dumpPacket(packet, header->caplen);
         if(pk.dot11bf_.checkBeaconType())
         {
-            pk.setTagTree(pk.taggedp_, header->caplen - DOT11BEFORETP_LEN);
-            auto item = pk.taggedps_.find(0);
-            if (item != pk.taggedps_.end())
+            while(pk.taggedp_.parse())
             {
-                char* essid = new char[item->second.taglen_ + 1];
-                essid[item->second.taglen_] = '\0';
-                for(int i = 0;i<item->second.taglen_;i++)
-                    essid[i] = *((char*)(item->second.data_) + i);
-                int pwr = (int)(char)(pk.dot11rth_.frontantennasignal_);
-                int numofbeacons = 0;
-                numofbeacons = pk.addBssidInMap(Mac(pk.dot11bf_.bssidmac_), std::make_pair(std::string(essid), std::make_pair(0, pwr)));
-                pk.printPacketData();
-                // std::cout << "PWR: " << pwr << std::endl;
-                // std::cout << "BSSID: " << std::string(Mac(pk.dot11bf_.bssidmac_)) << std::endl;
-                // std::cout << "ESSID: " << std::string(essid) << std::endl;
-                // std::cout << "Beacons: " << numofbeacons << std::endl;
+                if (pk.taggedp_.tagnum_ == 0)
+                {
+                    char* essid = new char[pk.taggedp_.taglen_ + 1];
+                    essid[pk.taggedp_.taglen_] = '\0';
+                    for(int i = 0;i<pk.taggedp_.taglen_;i++)
+                        essid[i] = *((pk.taggedp_.data_) + i);
+                    int numofbeacons = 0;
+                    numofbeacons = pk.addBssidInMap(Mac(pk.dot11bf_.bssidmac_), std::make_pair(std::string(essid), 0));
+                    pk.printPacketData();
+                    break;
+                }
+                else
+                    pk.taggedp_.nextData();
             }
-            else
-                std::cout << "Key does not exist!" << std::endl;
-            pk.taggedps_.clear();
         }
 	}
 	pcap_close(pcap);

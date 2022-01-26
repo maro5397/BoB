@@ -9,7 +9,7 @@ typedef uint32_t u_int32_t;
 typedef uint64_t u_int64_t;
 
 #ifndef RADIOTAPHDR_LEN     
-#define RADIOTAPHDR_LEN 0x18 //24byte
+#define RADIOTAPHDR_LEN 0x8 //8byte
 #endif
 
 #ifndef DOT11BEACONFRAME_LEN   
@@ -20,26 +20,13 @@ typedef uint64_t u_int64_t;
 #define DOT11WIRELESSMANFIXED_LEN   0xc //12byte
 #endif
 
-#ifndef DOT11BEFORETP_LEN  
-#define DOT11BEFORETP_LEN   0x3c //60byte
-#endif
-
 struct Dot11RadioTapHdr
 {
     u_int8_t revision_;
     u_int8_t pad_;
-    u_int16_t len_;
-    u_int32_t frontpresentflag_;
-    u_int32_t backpresentflag_;
-    u_int8_t flag_;
-    u_int8_t datarate_;
-    u_int16_t channelfre_;
-    u_int16_t channelflag_;
-    u_int8_t frontantennasignal_; //PWR
-    u_int8_t padding_;
-    u_int16_t rxflag_;
-    u_int8_t backantennasignal_;
-    u_int8_t antenna_;
+    u_int16_t len_; //2byte skip
+    u_int32_t presentflag_;
+    //jump len_
 };
 
 struct Dot11BeaconFrame
@@ -64,23 +51,28 @@ struct FixedParameters
 
 struct TaggedParameter //ess
 {
+    const unsigned char* starter_;
+    const unsigned char* pointer_;
+
     u_int8_t tagnum_;
     u_int8_t taglen_;
     const unsigned char* data_;
+
+    int entirelen_;
+
+    void setting(const unsigned char* pointer, int len);
+    bool parse();
+    bool nextData();
 };
 
-struct Dot11PacketForm
+struct BeaconPacketForm
 {
-    Dot11RadioTapHdr dot11rth_;
     Dot11BeaconFrame dot11bf_;
     FixedParameters fixedp_;
-    const unsigned char* taggedp_;
+    TaggedParameter taggedp_;
 
-    std::map<u_int8_t, TaggedParameter> taggedps_;
+    std::map<Mac, std::pair<std::string, int>> beaconbssid;
 
-    std::map<Mac, std::pair<std::string, std::pair<int, int>>> beaconbssid;
-
-    void setTagTree(const u_char* pk, int len);
-    int addBssidInMap(Mac bssid, std::pair<std::string, std::pair<int, int>> value);
+    int addBssidInMap(Mac bssid, std::pair<std::string, int> value);
     void printPacketData();
 };

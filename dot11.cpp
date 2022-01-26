@@ -9,40 +9,48 @@ bool Dot11BeaconFrame::checkBeaconType()
     return false;
 }
 
-void Dot11PacketForm::setTagTree(const u_char* pk, int len)
+bool TaggedParameter::nextData()
 {
-    int point = 0;
-    while(point != len)
-    {
-        TaggedParameter item;
-        item.tagnum_ = *(pk+point+0);
-        item.taglen_ = *(pk+point+1);
-        item.data_ = pk+point+2;
-        taggedps_.insert({*(pk+point+0), item});
-        point += *(pk+point+1)+2;
-    }
-    return;
+    if((pointer_-starter_)/sizeof(u_int8_t*) == entirelen_)
+        return false;
+    pointer_ = pointer_ + taglen_ + sizeof(tagnum_) + sizeof(taglen_);
+    return true;
 }
 
-int Dot11PacketForm::addBssidInMap(Mac bssid, std::pair<std::string, std::pair<int, int>> value)
+int BeaconPacketForm::addBssidInMap(Mac bssid, std::pair<std::string, int> value)
 {
     beaconbssid.insert({bssid, value}); //if there is bssid already it didn't insert
     auto item = beaconbssid.find(bssid);
-    item->second.second.first++;
-    item->second.second.second = value.second.second;
-    return item->second.second.first;
+    item->second.second++;
+    return item->second.second;
 }
 
-void Dot11PacketForm::printPacketData()
+void BeaconPacketForm::printPacketData()
 {
     system("clear");
     printf("=====================================================\n");
     for(auto beacondata : beaconbssid)
     {
-        std::cout << "PWR: " << beacondata.second.second.second << std::endl;
         std::cout << "BSSID: " << std::string(beacondata.first) << std::endl;
         std::cout << "ESSID: " << std::string(beacondata.second.first) << std::endl;
-        std::cout << "Beacons: " << beacondata.second.second.first << std::endl;
+        std::cout << "Beacons: " << beacondata.second.second << std::endl;
         printf("=====================================================\n");
     }
+}
+
+bool TaggedParameter::parse()
+{
+    if((pointer_-starter_)/sizeof(u_int8_t*) == entirelen_)
+        return false;
+    tagnum_ = *(pointer_+0);
+    taglen_ = *(pointer_+1);
+    data_ = pointer_+2;
+    return true;
+}
+
+void TaggedParameter::setting(const unsigned char* pointer, int len)
+{
+    starter_ = pointer;
+    pointer_ = pointer;
+    entirelen_ = len;
 }
