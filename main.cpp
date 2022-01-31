@@ -90,7 +90,7 @@ int main(int argc, char* argv[]) {
         pk.beaconhdr_.fragseqnum_ = num << 4;
         res = pcap_sendpacket(handle, reinterpret_cast<const u_char*>(&pk), DEAUTHPACKET_LEN);
         printf("send seq: %d\n", num);
-        num++; sleep(1);
+        num++; usleep(500000);
 	}
 	pcap_close(handle);
 }
