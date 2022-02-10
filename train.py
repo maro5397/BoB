@@ -39,10 +39,7 @@ class TrainPipeline():
         self.mcts_player = MCTSPlayer(self.policy_value_net.policy_value_fn, c_puct=self.c_puct, n_playout=self.n_playout, is_selfplay=1)
 
     def get_equi_data(self, play_data):
-        """
-        회전 및 뒤집기로 데이터set 확대
-        play_data: [(state, mcts_prob, winner_z), ..., ...]
-        """
+        #회전 및 뒤집기로 데이터set 확대
         extend_data = []
         for state, mcts_porb, winner in play_data:
             for i in [1, 2, 3, 4]:
@@ -58,7 +55,6 @@ class TrainPipeline():
         return extend_data
 
     def collect_selfplay_data(self, n_games=1):
-        """collect self-play data for training"""
         for i in range(n_games):
             winner, play_data = self.game.start_self_play(self.mcts_player, temp=self.temp)
             play_data = list(play_data)[:]
@@ -68,7 +64,6 @@ class TrainPipeline():
             self.data_buffer.extend(play_data) # deque의 오른쪽(마지막)에 삽입
 
     def policy_update(self):
-        """update the policy-value net"""
         mini_batch = random.sample(self.data_buffer, self.batch_size)
         state_batch = [data[0] for data in mini_batch]
         mcts_probs_batch = [data[1] for data in mini_batch]
@@ -103,7 +98,7 @@ class TrainPipeline():
 
             # 현재 model의 성능을 체크, 모델 속성을 저장
             if (i+1) % self.check_freq == 0:
-                print(f"★ {self.train_num}번째 batch에서 모델 저장 : {datetime.now()}")
+                print(f"{self.train_num}번째 batch에서 모델 저장 : {datetime.now()}")
                 self.policy_value_net.save_model(f'{model_path}/policy_15_{self.train_num}.model')
                 pickle.dump(self, open(f'{train_path}/train_15_{self.train_num}.pickle', 'wb'), protocol=2)
 
@@ -116,6 +111,6 @@ if __name__ == '__main__':
     if init_num == 0 or init_num == None : training_pipeline = TrainPipeline()
     else : training_pipeline = pickle.load(open(f'{train_path}/train_15_{init_num}.pickle', 'rb'))
 
-    print(f"★ 학습시작 : {datetime.now()}")
+    print(f"학습시작 : {datetime.now()}")
     training_pipeline.run()
     
