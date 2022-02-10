@@ -30,20 +30,6 @@ class Renju_Rule(object):
                     cnt += 1
         return cnt
 
-    def is_six(self, x, y, stone):
-        for i in range(4):
-            cnt = self.get_stone_count(x, y, stone, i)
-            if cnt > 5:
-                return True
-        return False
-
-    def is_five(self, x, y, stone):
-        for i in range(4):
-            cnt = self.get_stone_count(x, y, stone, i)
-            if cnt == 5:
-                return True
-        return False
-
     def find_empty_point(self, x, y, stone, direction):
         dx, dy = self.get_xy(direction)
         while True:
@@ -69,8 +55,6 @@ class Renju_Rule(object):
         return False
 
     def open_four(self, x, y, stone, direction):
-        if self.is_five(x, y, stone):
-            return False
         cnt = 0
         for i in range(2):
             coord = self.find_empty_point(x, y, stone, direction * 2 + i)
@@ -104,7 +88,6 @@ class Renju_Rule(object):
                 cnt += 1
         self.set_stone(x, y, empty)
         if cnt >= 2:
-            # print("double three")
             return True
         return False
 
@@ -123,10 +106,8 @@ class Renju_Rule(object):
         return False
 
     def forbidden_point(self, x, y, stone):
-        if self.is_five(x, y, stone) or self.is_six(x, y, stone): return False
-        elif self.double_three(x, y, stone) or self.double_four(x, y, stone): return True
-        
-        return False
+        if self.double_three(x, y, stone) or self.double_four(x, y, stone): return True
+        return False 
 
     def get_forbidden_points(self, stone):
         coords = []
