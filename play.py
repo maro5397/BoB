@@ -34,14 +34,12 @@ class Human(object):
 def run():
     n = 5
     width, height = 15, 15
-    print("이 오목 인공지능은 15x15 환경에서 동작합니다.")
-    
-    print("현재 가능한 난이도(정책망의 학습 횟수) 목록 : [ 2500, 5000, 7500, 10000, 12500, 15000, 17500, 20000 ]")
-    print("난이도를 입력하세요.")
+    print("난이도(정책망의 학습 횟수)")
+    print("난이도 입력: ", end='')
     hard = int(input())
     model_file = f'./model/policy_9_{hard}.model'
     
-    print("자신이 선공(흑)인 경우에 0, 후공(백)인 경우에 1을 입력하세요.")
+    print("선공(흑)인 경우에 0, 후공(백)인 경우에 1을 입력")
     order = int(input())
     if order not in [0,1] : return "강제 종료"
 
