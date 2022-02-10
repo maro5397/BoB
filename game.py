@@ -18,23 +18,22 @@ class Board(object):
         self.states, self.states_loc = {}, [[0] * self.width for _ in range(self.height)]
         self.forbidden_locations, self.forbidden_moves = [], []
         
+        # # 금수 판정 디버그용
+        # self.states_loc = list(
+        # [[0, 0, 0, 0, 0, 0, 0, 0, 0],
+        #  [0, 0, 0, 0, 1, 0, 0, 0, 0],
+        #  [0, 0, 0, 0, 1, 0, 0, 0, 0],
+        #  [0, 0, 0, 0, 1, 0, 0, 0, 0],
+        #  [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        #  [0, 0, 0, 0, 0, 1, 1, 1, 0], #5, 4
+        #  [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        #  [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        #  [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        # ])
         
-        # 금수 판정 디버그용
-        self.states_loc = list(
-        [[0, 0, 0, 0, 0, 0, 0, 0, 0],
-         [0, 0, 0, 0, 0, 0, 0, 0, 0],
-         [0, 0, 0, 0, 1, 0, 0, 0, 0],
-         [0, 0, 0, 0, 1, 0, 0, 0, 0],
-         [0, 0, 0, 0, 0, 0, 0, 0, 0],
-         [0, 0, 0, 0, 0, 1, 1, 0, 0], #5, 4
-         [0, 0, 0, 0, 0, 0, 0, 0, 0],
-         [0, 0, 0, 0, 0, 0, 0, 0, 0],
-         [0, 0, 0, 0, 0, 0, 0, 0, 0],
-        ])
-        
-        for i in range(9) :
-            for j in range(9) :
-                if self.states_loc[i][j] != 0 : self.states[i*9+j] = self.states_loc[i][j]
+        # for i in range(9) :
+        #     for j in range(9) :
+        #         if self.states_loc[i][j] != 0 : self.states[i*9+j] = self.states_loc[i][j]
         
 
     def move_to_location(self, move):
@@ -84,7 +83,7 @@ class Board(object):
             h = m // width
             w = m % width
             player = states[m]
-
+            
             if (w in range(width - n + 1) and
                     len(set(states.get(i, -1) for i in range(m, m + n))) == 1):
                 return True, player
@@ -133,7 +132,7 @@ class Game(object):
         width = board.width
         height = board.height
 
-        os.system('cls')
+        #os.system('cls')
         
         print()
         if board.order == 0 : 
