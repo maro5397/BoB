@@ -83,7 +83,7 @@ class Board(object):
             h = m // width
             w = m % width
             player = states[m]
-            
+            #6목 흑은 승리하지 않음
             if (w in range(width - n + 1) and
                     len(set(states.get(i, -1) for i in range(m, m + n))) == 1):
                 return True, player
