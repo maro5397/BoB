@@ -23,10 +23,10 @@ class Board(object):
         self.states_loc = list(
         [[0, 0, 0, 0, 0, 0, 0, 0, 0],
          [0, 0, 0, 0, 0, 0, 0, 0, 0],
-         [0, 0, 0, 0, 2, 0, 0, 0, 0],
          [0, 0, 0, 0, 1, 0, 0, 0, 0],
          [0, 0, 0, 0, 1, 0, 0, 0, 0],
-         [0, 0, 0, 0, 0, 1, 1, 2, 0], #5, 4
+         [0, 0, 0, 0, 0, 0, 0, 0, 0],
+         [0, 0, 0, 0, 0, 1, 1, 0, 0], #5, 4
          [0, 0, 0, 0, 0, 0, 0, 0, 0],
          [0, 0, 0, 0, 0, 0, 0, 0, 0],
          [0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -147,8 +147,8 @@ class Game(object):
         if board.current_player == 1 : print("당신의 차례입니다.\n")
         else : print("AI가 수를 두는 중...\n")
             
-        row_number = ['⒪ ','⑴ ','⑵ ','⑶ ','⑷ ','⑸ ','⑹ ','⑺ ','⑻ ','⑼ ','⑽ ','⑾ ','⑿ ','⒀ ','⒁ ']
-        print('　', end='')
+        row_number = [' 0 ',' 1 ',' 2 ',' 3 ',' 4 ',' 5 ',' 6 ',' 7 ',' 8 ',' 9 ','10 ','11 ','12 ','13 ','14 ']
+        print('   ', end='')
         for i in range(height) : print(row_number[i], end='')
         print()
         for i in range(height):
@@ -156,10 +156,10 @@ class Game(object):
             for j in range(width):
                 loc = i * width + j
                 p = board.states.get(loc, -1)
-                if p == player1 : print(' ●' if board.order == 0 else ' ○', end='')
-                elif p == player2 : print(' ○' if board.order == 0 else ' ●', end='')
-                elif board.is_you_black() and (i,j) in board.forbidden_locations : print('Ⅹ', end='')
-                else : print('　', end='')
+                if p == player1 : print(' ● ' if board.order == 0 else ' ○ ', end='')
+                elif p == player2 : print(' ○ ' if board.order == 0 else ' ● ', end='')
+                elif board.is_you_black() and (i,j) in board.forbidden_locations : print(' X ', end='')
+                else : print('   ', end='')
             print()
         if board.last_loc != -1 :
             print(f"마지막 돌의 위치 : ({board.last_loc[0]},{board.last_loc[1]})\n")
