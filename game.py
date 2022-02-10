@@ -50,8 +50,6 @@ class Board(object):
         return move
 
     def current_state(self):
-        """현재 플레이어의 관점에서 보드 상태(state)를 return한다.
-        state shape: 4 * [width*height] """
         square_state = np.zeros((4, self.width, self.height))
         if self.states:
             moves, players = np.array(list(zip(*self.states.items())))
@@ -122,11 +120,6 @@ class Board(object):
         self.forbidden_moves = [self.location_to_move(loc) for loc in self.forbidden_locations]
         
     def is_you_black(self) :
-        # order, current_player
-        # (0,1) → 사람(흑돌)
-        # (0,2) → AI(백돌)
-        # (1,1) → 사람(백돌)
-        # (1,2) → AI(흑돌)
         if self.order == 0 and self.current_player == 1 : return True
         elif self.order == 1 and self.current_player == 2 : return True
         else : return False
