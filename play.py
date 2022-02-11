@@ -34,10 +34,28 @@ class Human(object):
 def run():
     n = 5
     width, height = 15, 15
-    print("난이도(정책망의 학습 횟수)")
-    print("난이도 입력: ", end='')
+    
+    print("온라인 게임이라면 0을, 오프라인 게임이라면 1을 입력: ", end='')
+    game_option = int(input())
+    
+    if game_option == 1:
+        offline_game()
+        
+    else:
+        print("직접 플레이한다면 0을, 인공지능으로 플레이한다면 1을 입력: ", end='')
+        player_option = int(input())
+        if player_option == 0:
+            
+        else:
+            
+
+def online_game():
+    
+
+def offline_game():
+    print("난이도(정책망의 학습 횟수) 입력: ", end='')
     hard = int(input())
-    model_file = f'./model/policy_9_{hard}.model'
+    model_file = f'./model/policy_15_{hard}.model'
     
     print("선공(흑)인 경우에 0, 후공(백)인 경우에 1을 입력")
     order = int(input())
@@ -54,7 +72,7 @@ def run():
     human = Human()
     
     # start_player = 0 → 사람 선공 / 1 → AI 선공
-    game.start_play(human, mcts_player, start_player=order, is_shown=1)
+    game.start_play(human, mcts_player, start_player=order, is_shown=1)            
 
 if __name__ == '__main__':
     run()
