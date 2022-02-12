@@ -65,7 +65,7 @@ def online_game_for_AI(n, width, height):
     game = Game(board)
     ai_player = get_AI_player(width, height)
     challenger = Challenger()
-    game.start_play_offline(ai_player, challenger, is_shown=1) 
+    game.start_play_online(ai_player, challenger, is_shown=1) 
     
     
 def online_game_for_human(n, width, height):
@@ -73,7 +73,7 @@ def online_game_for_human(n, width, height):
     game = Game(board)
     human = Human()
     challenger = Challenger()
-    game.start_play_offline(human, challenger, is_shown=1) 
+    game.start_play_online(human, challenger, is_shown=1) 
 
 
 def offline_game(n, width, height):
