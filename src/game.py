@@ -5,8 +5,6 @@ from renju_rule import Renju_Rule
 import os
 from gomoku_lib import Gomoku
 
-my_gomoku = Gomoku("34.64.183.225", 1234, True)
-
 class Board(object):
     def __init__(self, **kwargs):
         self.width = int(kwargs.get('width', 15))
@@ -179,6 +177,7 @@ class Game(object):
             
     # start_player = 0 → 사람 선공 / 1 → AI 선공
     def start_play_online_human(self, player, challenger, is_shown=1):
+        my_gomoku = Gomoku("34.64.183.225", 1234, True)
         if my_gomoku.connect():
             if my_gomoku.color == 'black':
                 order = 0
