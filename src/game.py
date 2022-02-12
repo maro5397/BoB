@@ -116,19 +116,19 @@ class Game(object):
         width = board.width
         height = board.height
 
-        os.system('cls')
+        #os.system('cls')
         
         print()
         if board.order == 0 : 
-            print("흑돌(●) : 플레이어")
-            print("백돌(○) : AI")
+            print("흑돌(●) : Me")
+            print("백돌(○) : Challenger")
         else :
-            print("흑돌(●) : AI")
-            print("백돌(○) : 플레이어")
+            print("흑돌(●) : Challenger")
+            print("백돌(○) : Me")
         print("--------------------------------\n")
         
         if board.current_player == 1 : print("당신의 차례입니다.\n")
-        else : print("AI가 수를 두는 중...\n")
+        else : print("Challenger가 수를 두는 중...\n")
             
         row_number = [' 0 ',' 1 ',' 2 ',' 3 ',' 4 ',' 5 ',' 6 ',' 7 ',' 8 ',' 9 ','10 ','11 ','12 ','13 ','14 ']
         print('   ', end='')
@@ -176,7 +176,7 @@ class Game(object):
                 return winner
             
     # start_player = 0 → 사람 선공 / 1 → AI 선공
-    def start_play_online_human(self, player, challenger, is_shown=1):
+    def start_play_online(self, player, challenger, is_shown=1):
         my_gomoku = Gomoku("34.64.183.225", 1234, True)
         if my_gomoku.connect():
             if my_gomoku.color == 'black':
@@ -194,39 +194,42 @@ class Game(object):
         if updateinit[0]:
             if updateinit[1] == 2 and updateinit[3] == 0:
                 if updateinit[2] == 0:
+                    print('start!')
+                    if self.board.is_you_black() : self.board.set_forbidden()
+                    if is_shown : self.graphic(self.board, player.player, challenger.player)
                     move = player.get_action(self.board)
                     location = self.board.move_to_location(move)
-                    my_gomoku.put(location[1], location[0])
+                    my_gomoku.put(location[1] + 1, location[0] + 1)
                     self.board.do_move(move)
-                else:
-                    pass
-        xfilter = 0b11110000
-        yfilter = 0b00001111
         while True:
             if self.board.is_you_black() : self.board.set_forbidden()
             if is_shown : self.graphic(self.board, player.player, challenger.player)
-            
             res = my_gomoku.update_or_end()
             if res[0]:
                 if res[1] == 2: #update
-                    current_player = res[2]
-                    player_in_turn = players[current_player]
-                    if current_player == 1: #my turn
+                    if res[2] == 0: #my turn
+                        current_player = self.board.get_current_player()
+                        player_in_turn = players[current_player]
                         xy = res[3]
-                        x = (xy & xfilter) >> 4
-                        y = xy&yfilter
-                        location = [y, x]
+                        x = xy >> 4
+                        y = xy & 0b00001111
+                        location = [y-1, x-1]
                         move = player_in_turn.get_action(self.board, location)
                         self.board.do_move(move)
+                        
+                        if self.board.is_you_black() : self.board.set_forbidden()
+                        if is_shown : self.graphic(self.board, player.player, challenger.player)
+                        
+                        current_player = self.board.get_current_player()
+                        player_in_turn = players[current_player]
                         move = player_in_turn.get_action(self.board)
                         location = self.board.move_to_location(move)
-                        my_gomoku.put(location[1], location[0])
+                        my_gomoku.put(location[1] + 1, location[0] + 1)
                         self.board.do_move(move)
-                        continue
                     else: #challenger turn
-                        continue
+                        print("challenger turn")
                 elif res[1] == 4: #end
-                    if is_shown: self.graphic(self.board, player.player, challenger.player)
+                    print("================================")
                     if res[2] == 1:
                         print("You win!")
                     else:
