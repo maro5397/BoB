@@ -1,9 +1,9 @@
-<h1>[알파고(AlphaGo)]와 [알파고 제로(AlphaGo Zero)]의 구현 방식을 모방하여 오목 인공지능(AI)을 구현</h1>
+# [알파고(AlphaGo)]와 [알파고 제로(AlphaGo Zero)]의 구현 방식을 모방하여 오목 인공지능(AI)을 구현
 
-<h3>오픈소스코드를 적극 활용</h3>
+## 오픈소스코드를 적극 활용
 - [An implementation of the AlphaZero algorithm for Gomoku](https://github.com/junxiaosong/AlphaZero_Gomoku)
 
-<h3>방법론</h3>
+## 방법론
 사용한 주요 방법론은 다음과 같이 3가지이다.
 - 정책망(Policy Network)
   - 알파고(AlphaGo)에서 사용된 방법론으로, 현재 오목판의 상태(state)를 입력받아 각 위치에 대한 기댓값을 계산합니다.
