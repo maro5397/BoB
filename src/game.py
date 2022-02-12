@@ -201,6 +201,8 @@ class Game(object):
                     self.board.do_move(move)
                 else:
                     pass
+        xfilter = 0b11110000
+        yfilter = 0b00001111
         while True:
             if self.board.is_you_black() : self.board.set_forbidden()
             if is_shown : self.graphic(self.board, player.player, challenger.player)
@@ -211,12 +213,16 @@ class Game(object):
                     current_player = res[2]
                     player_in_turn = players[current_player]
                     if current_player == 1: #my turn
-                        #location 정보 추가 location = 4bit, 4bit
+                        xy = res[3]
+                        x = (xy & xfilter) >> 4
+                        y = xy&yfilter
+                        location = [y, x]
                         move = player_in_turn.get_action(self.board, location)
                         self.board.do_move(move)
                         move = player_in_turn.get_action(self.board)
                         location = self.board.move_to_location(move)
                         my_gomoku.put(location[1], location[0])
+                        self.board.do_move(move)
                         continue
                     else: #challenger turn
                         continue
