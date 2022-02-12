@@ -1,4 +1,4 @@
-# [알파고(AlphaGo)]와 [알파고 제로(AlphaGo Zero)]의 구현 방식을 모방하여 오목 인공지능(AI)을 구현
+# [알파제로(AlphaGo Zero)]의 구현 방식을 모방한 오목 인공지능(AI) 구현
 
 ## 오픈소스코드를 적극 활용
 - [An implementation of the AlphaZero algorithm for Gomoku](https://github.com/junxiaosong/AlphaZero_Gomoku)
