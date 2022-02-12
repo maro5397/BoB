@@ -107,8 +107,8 @@ class TrainPipeline():
 
 if __name__ == '__main__':
     print("15x15 환경에서 학습을 진행합니다.")
-    train_path = f"./save/train_15"
-    model_path = f"./save/model_15"
+    train_path = f"../save/train_15"
+    model_path = f"../save/model_15"
     
     init_num = int(input('현재까지 저장된 모델의 학습 수 : '))
     if init_num == 0 or init_num == None : training_pipeline = TrainPipeline()

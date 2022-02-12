@@ -53,7 +53,7 @@ class Challenger(object):
 def get_AI_player(width, height):
     print("난이도(정책망의 학습 횟수) 입력: ", end='')
     hard = int(input())
-    model_file = f'./model/policy_15_{hard}.model'
+    model_file = f'../model/policy_15_{hard}.model'
     # 이미 제공된 model을 불러와서 학습된 policy_value_net을 얻는다.
     policy_param = pickle.load(open(model_file, 'rb'), encoding='bytes')
     best_policy = PolicyValueNetNumpy(width, height, policy_param)
