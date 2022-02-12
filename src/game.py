@@ -228,6 +228,9 @@ class Game(object):
                         print("You lose!")
                     print("code:", res[3])
                     return
+            else:
+                print("error: False return")
+                return
 
     def start_self_play(self, player, is_shown=0, temp=1e-3):
         """ 스스로 자가 대국하여 학습 데이터(state, mcts_probs, z) 생성 """
