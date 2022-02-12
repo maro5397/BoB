@@ -1,7 +1,11 @@
 # -*- coding: utf-8 -*-
+from distutils.util import change_root
 import numpy as np
 from renju_rule import Renju_Rule
 import os
+from gomoku_lib import Gomoku
+
+my_gomoku = Gomoku("34.64.183.225", 1234, True)
 
 class Board(object):
     def __init__(self, **kwargs):
@@ -17,24 +21,6 @@ class Board(object):
         
         self.states, self.states_loc = {}, [[0] * self.width for _ in range(self.height)]
         self.forbidden_locations, self.forbidden_moves = [], []
-        
-        # # 금수 판정 디버그용
-        # self.states_loc = list(
-        # [[0, 0, 0, 0, 0, 0, 0, 0, 0],
-        #  [0, 0, 0, 0, 1, 0, 0, 0, 0],
-        #  [0, 0, 0, 0, 1, 0, 0, 0, 0],
-        #  [0, 0, 0, 0, 1, 0, 0, 0, 0],
-        #  [0, 0, 0, 0, 0, 0, 0, 0, 0],
-        #  [0, 0, 0, 0, 0, 1, 1, 1, 0], #5, 4
-        #  [0, 0, 0, 0, 0, 0, 0, 0, 0],
-        #  [0, 0, 0, 0, 0, 0, 0, 0, 0],
-        #  [0, 0, 0, 0, 0, 0, 0, 0, 0],
-        # ])
-        
-        # for i in range(9) :
-        #     for j in range(9) :
-        #         if self.states_loc[i][j] != 0 : self.states[i*9+j] = self.states_loc[i][j]
-        
 
     def move_to_location(self, move):
         h = move // self.width
@@ -132,7 +118,7 @@ class Game(object):
         width = board.width
         height = board.height
 
-        #os.system('cls')
+        os.system('cls')
         
         print()
         if board.order == 0 : 
@@ -163,7 +149,7 @@ class Game(object):
         if board.last_loc != -1 :
             print(f"마지막 돌의 위치 : ({board.last_loc[0]},{board.last_loc[1]})\n")
 
-    def start_play(self, player1, player2, start_player=0, is_shown=1):
+    def start_play_offline(self, player1, player2, start_player=0, is_shown=1):
         self.board.init_board(start_player)
         p1, p2 = self.board.players
         player1.set_player_ind(p1)
@@ -190,6 +176,58 @@ class Game(object):
                     if winner != -1 : print("Game end. Winner is", players[winner])
                     else : print("Game end. Tie")
                 return winner
+            
+    # start_player = 0 → 사람 선공 / 1 → AI 선공
+    def start_play_online_human(self, player, challenger, is_shown=1):
+        if my_gomoku.connect():
+            if my_gomoku.color == 'black':
+                order = 0
+            else:
+                order = 1
+        self.board.init_board(order)
+        p1, p2 = self.board.players
+        player.set_player_ind(p1)
+        challenger.set_player_ind(p2)
+        players = {p1: player, p2: challenger}
+        
+        my_gomoku.ready()
+        updateinit = my_gomoku.update_or_end()
+        if updateinit[0]:
+            if updateinit[1] == 2 and updateinit[3] == 0:
+                if updateinit[2] == 0:
+                    move = player.get_action(self.board)
+                    location = self.board.move_to_location(move)
+                    my_gomoku.put(location[1], location[0])
+                    self.board.do_move(move)
+                else:
+                    pass
+        while True:
+            if self.board.is_you_black() : self.board.set_forbidden()
+            if is_shown : self.graphic(self.board, player.player, challenger.player)
+            
+            res = my_gomoku.update_or_end()
+            if res[0]:
+                if res[1] == 2: #update
+                    current_player = res[2]
+                    player_in_turn = players[current_player]
+                    if current_player == 1: #my turn
+                        #location 정보 추가 location = 4bit, 4bit
+                        move = player_in_turn.get_action(self.board, location)
+                        self.board.do_move(move)
+                        move = player_in_turn.get_action(self.board)
+                        location = self.board.move_to_location(move)
+                        my_gomoku.put(location[1], location[0])
+                        continue
+                    else: #challenger turn
+                        continue
+                elif res[1] == 4: #end
+                    if is_shown: self.graphic(self.board, player.player, challenger.player)
+                    if res[2] == 1:
+                        print("You win!")
+                    else:
+                        print("You lose!")
+                    print("code:", res[3])
+                    return
 
     def start_self_play(self, player, is_shown=0, temp=1e-3):
         """ 스스로 자가 대국하여 학습 데이터(state, mcts_probs, z) 생성 """
