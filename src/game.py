@@ -116,7 +116,7 @@ class Game(object):
         width = board.width
         height = board.height
 
-        #os.system('cls')
+        os.system('cls')
         
         print()
         if board.order == 0 : 
