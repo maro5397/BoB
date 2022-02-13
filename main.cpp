@@ -35,7 +35,7 @@ int channelChange(int sock, char* interface, iwrange range) {
 
     while(true) {
         for(int i = 0;i<len;i++) {
-            usleep(1000);
+            usleep(1000000);
 
             memset(&wrq, 0, sizeof(struct iwreq));
             wrq.u.freq.m = range.freq[i].m; //freq
