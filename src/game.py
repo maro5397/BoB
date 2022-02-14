@@ -176,8 +176,8 @@ class Game(object):
                 return winner
             
     # start_player = 0 → 사람 선공 / 1 → AI 선공
-    def start_play_online(self, player, challenger, is_shown=1):
-        my_gomoku = Gomoku("34.64.183.225", 1234, True)
+    def start_play_online(self, player, challenger, ip, port, is_shown=1):
+        my_gomoku = Gomoku(ip, port, True)
         if my_gomoku.connect():
             if my_gomoku.color == 'black':
                 order = 0
