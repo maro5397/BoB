@@ -232,8 +232,12 @@ class Game(object):
                     print("================================")
                     if res[2] == 1:
                         print("You win!")
-                    else:
+                    elif res[2] == 0:
                         print("You lose!")
+                        xy = res[3]
+                        x = xy >> 4
+                        y = xy & 0b00001111
+                        print('(', x-1, ',', y-1, ')')
                     print("code:", res[3])
                     return
             else:
