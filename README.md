@@ -1,6 +1,6 @@
 # 알파제로를 모방한 오목AI 구현
 
-## 오픈소스코드를 적극 활용
+## 오픈 소스코드를 적극 활용
 - [An implementation of the AlphaZero algorithm for Gomoku](https://github.com/junxiaosong/AlphaZero_Gomoku)
 
 ## 방법론
@@ -13,3 +13,8 @@
   - 인간의 플레이 데이터를 전혀 사용하지 않았음에도, 알파고 제로는 알파고보다 뛰어난 성능을 보여주었습니다.
 - MCTS(Monte Carlo Tree Search : 몬테카를로 트리 탐색) 알고리즘
   - 알파고 제로에서 사용된 방법론으로, 다양한 경우의 수를 탐색하여 최종적으로 착수 위치를 결정합니다.
+
+## 파이썬 패키지 다운로드
+!pip install -r https://raw.githubusercontent.com/Lasagne/Lasagne/master/requirements.txt
+!pip install --upgrade https://github.com/Theano/Theano/archive/master.zip
+!pip install --upgrade https://github.com/Lasagne/Lasagne/archive/master.zip
