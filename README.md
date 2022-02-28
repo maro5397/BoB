@@ -15,6 +15,6 @@
   - 알파고 제로에서 사용된 방법론으로, 다양한 경우의 수를 탐색하여 최종적으로 착수 위치를 결정합니다.
 
 ## 파이썬 패키지 다운로드
-!pip install -r https://raw.githubusercontent.com/Lasagne/Lasagne/master/requirements.txt
-!pip install --upgrade https://github.com/Theano/Theano/archive/master.zip
-!pip install --upgrade https://github.com/Lasagne/Lasagne/archive/master.zip
+!pip install -r https://raw.githubusercontent.com/Lasagne/Lasagne/master/requirements.txt  
+!pip install --upgrade https://github.com/Theano/Theano/archive/master.zip  
+!pip install --upgrade https://github.com/Lasagne/Lasagne/archive/master.zip  
