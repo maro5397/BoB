@@ -1,0 +1,6 @@
+http://testphp.vulnweb.com/index.php
+http://testphp.vulnweb.com/login.php
+http://testphp.vulnweb.com/logout.php
+http://testphp.vulnweb.com/admin/
+http://testphp.vulnweb.com/admin/
+http://testphp.vulnweb.com/
